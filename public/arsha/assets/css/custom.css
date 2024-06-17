@@ -1,0 +1,52 @@
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4e73df;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-info {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #343a40;
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  .contact-info i {
+    color: #4e73df;
+  }
+  
+  .bg-light {
+    background-color:#4e73df;
+  }
+
+  .login-image-container {
+    background-size: contain;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* Ensure a minimum height for better visibility */
+}
+
+@media (max-width: 500px) {
+    .login-image-container {
+        display: none;
+    }
+}
