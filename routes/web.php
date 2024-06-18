@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TopPerformanceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('orders', OrderController::class)->only(['index', 'create', 'store']);
     Route::resource('reports', ReportController::class);
     Route::resource('users', UserController::class);
+    
 
     Route::post('approve-member/{id}', [UserController::class, 'approveMember'])->name('approve-member');
 
@@ -38,6 +40,8 @@ Route::middleware(['auth'])->group(function () {
 
     // Rute untuk dashboard admin
     Route::get('/dashboard/admin', [AdminDashboardController::class, 'index'])->name('dashboard.admin');
+
+    Route::get('topperformance', [TopPerformanceController::class, 'index'])->name('topperformance');
 });
 
 Auth::routes();

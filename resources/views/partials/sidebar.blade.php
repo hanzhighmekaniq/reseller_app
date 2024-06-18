@@ -134,6 +134,13 @@
 
     <!-- Nav Item - Logout -->
     <li class="nav-item">
+        <a class="nav-link" href="{{ url('/topperformance') }}">
+            <i class="fas fa-fw fa-star"></i>
+            <span>Top Performance</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
