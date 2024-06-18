@@ -9,7 +9,7 @@ class Report extends Model {
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'order_id', 'profit'
+        'user_id', 'order_id', 'profit', 'return'
     ];
 
     public function user() {

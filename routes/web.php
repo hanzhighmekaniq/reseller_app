@@ -5,7 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemilikDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AnggotaDashboardController;
-use App\Http\Controllers\AdminController; 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,11 +17,14 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'role:pemilik'])->group(function () {
     Route::resource('admins', AdminController::class);
+    Route::get('/orders/report', [OrderController::class, 'report'])->name('orders.report');
+    Route::get('/orders/today', [OrderController::class, 'index'])->name('orders.today');
+    Route::get('/kelolapenjualan', [OrderController::class, 'index'])->name('kelolapenjualan');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('products', ProductController::class);
-    Route::resource('orders', OrderController::class);
+    Route::resource('orders', OrderController::class)->only(['index', 'create', 'store']);
     Route::resource('reports', ReportController::class);
     Route::resource('users', UserController::class);
 

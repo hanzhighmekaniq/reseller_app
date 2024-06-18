@@ -12,6 +12,7 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->integer('total_sales');
+            $table->integer('return');
             $table->decimal('profit', 8, 2);
             $table->timestamps();
 

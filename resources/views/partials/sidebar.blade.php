@@ -13,15 +13,20 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/dashboard/anggota') }}">
+        <a class="nav-link" 
+           @if(Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
+           @elseif(Auth::user()->role == 'admin') href="{{ url('/dashboard/admin') }}"
+           @elseif(Auth::user()->role == 'anggota') href="{{ url('/dashboard/anggota') }}"
+           @endif>
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Dashboard</span>
+        </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Tambahkan item menu khusus untuk pemilik -->
+    <!-- Tambahkan item menu berdasarkan peran pengguna -->
     @if(Auth::user()->role == 'pemilik')
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -44,11 +49,82 @@
             </a>
         </li>
 
-        <!-- Nav Item - Top Performance -->
+        <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('/performance') }}">
-                <i class="fas fa-fw fa-chart-line"></i>
-                <span>Top Performance</span>
+            <a class="nav-link" href="{{ url('/kelolapenjualan') }}">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>Kelola Penjualan</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Report -->
+        <li class="nav-item">
+            <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-fw fa-chart-bar"></i>
+                <span>Report</span>
+            </a>
+            <ul class="collapse list-unstyled" id="reportSubmenu">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/reports/today') }}">Laporan Hari Ini</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/reports/month') }}">Laporan Bulan Ini</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/reports/year') }}">Laporan Tahun Ini</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+    @endif
+
+    @if(Auth::user()->role == 'admin')
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Admin Tools
+        </div>
+
+        <!-- Nav Item - User Management -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('/users') }}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Manajemen Pengguna</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Report Management -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('/reports') }}">
+                <i class="fas fa-fw fa-file-alt"></i>
+                <span>Manajemen Laporan</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+    @endif
+
+    @if(Auth::user()->role == 'anggota')
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            User Area
+        </div>
+
+        <!-- Nav Item - Profile -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('/profile') }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Profil Saya</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Orders -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('/orders') }}">
+                <i class="fas fa-fw fa-shopping-cart"></i>
+                <span>Pesanan Saya</span>
             </a>
         </li>
 
