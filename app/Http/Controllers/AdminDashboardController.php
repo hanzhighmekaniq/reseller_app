@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Illuminate\Foundation\Auth\User;
+use Carbon\Carbon;
+
 
 class AdminDashboardController extends Controller
 {
     public function index()
     {
-        $totalAdmins = User::where('role', 'admin')->count();
+        $totalAnggota = User::where('role', 'anggota')->count();
         $totalProducts = Product::count();
         $totalOrders = Order::count();
         $currentMonthSales = Order::whereMonth('created_at', Carbon::now()->month)->sum('total_price');
 
-        return view('page.dashboardadmin', compact('totalAdmins', 'totalProducts', 'totalOrders', 'currentMonthSales'));
+        return view('page.dashboardadmin', compact('totalAnggota', 'totalProducts', 'totalOrders', 'currentMonthSales'));
     }
 }

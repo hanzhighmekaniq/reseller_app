@@ -15,7 +15,7 @@
     <li class="nav-item active">
         <a class="nav-link" 
            @if(Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
-           @elseif(Auth::user()->role == 'admin') href="{{ url('/dashboard/admin') }}"
+           @elseif(Auth::user()->role == 'bos') href="{{ url('/dashboard/admin') }}"
            @elseif(Auth::user()->role == 'anggota') href="{{ url('/dashboard/anggota') }}"
            @endif>
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -26,7 +26,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Tambahkan item menu berdasarkan peran pengguna -->
+    <!-- Menu berdasarkan peran pengguna -->
     @if(Auth::user()->role == 'pemilik')
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -51,27 +51,16 @@
 
         <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('/kelolapenjualan') }}">
-                <i class="fas fa-fw fa-dollar-sign"></i>
-                <span>Kelola Penjualan</span>
-            </a>
-        </li>
-
-        <!-- Nav Item - Report -->
-        <li class="nav-item">
-            <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-fw fa-chart-bar"></i>
-                <span>Report</span>
+                <span>Penjualan</span>
             </a>
-            <ul class="collapse list-unstyled" id="reportSubmenu">
+            <ul class="collapse list-unstyled" id="orderSubmenu">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/reports/today') }}">Laporan Hari Ini</a>
+                    <a class="nav-link" href="{{ url('orders/create') }}">Drop Penjualan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/reports/month') }}">Laporan Bulan Ini</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/reports/year') }}">Laporan Tahun Ini</a>
+                    <a class="nav-link" href="{{ url('kelolapenjualan') }}">Data Penjualan</a>
                 </li>
             </ul>
         </li>
@@ -80,7 +69,7 @@
         <hr class="sidebar-divider">
     @endif
 
-    @if(Auth::user()->role == 'admin')
+    @if(Auth::user()->role == 'bos')
         <!-- Heading -->
         <div class="sidebar-heading">
             Admin Tools
@@ -88,9 +77,9 @@
 
         <!-- Nav Item - User Management -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('/users') }}">
+            <a class="nav-link" href="{{ url('/anggota') }}">
                 <i class="fas fa-fw fa-users"></i>
-                <span>Manajemen Pengguna</span>
+                <span>Manajemen Anggota</span>
             </a>
         </li>
 
@@ -131,8 +120,35 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
     @endif
+    
+    <!-- Nav Item - Profile -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('/profile') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Profil Saya</span>
+        </a>
+    </li>
 
-    <!-- Nav Item - Logout -->
+    <!-- Nav Item - Report -->
+    <li class="nav-item">
+        <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-fw fa-chart-bar"></i>
+            <span>Report</span>
+        </a>
+        <ul class="collapse list-unstyled" id="reportSubmenu">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/reports/today') }}">Laporan Hari Ini</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/reports/month') }}">Laporan Bulan Ini</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/reports/year') }}">Laporan Tahun Ini</a>
+            </li>
+        </ul>
+    </li>
+
+    <!-- Nav Item - Top Performance -->
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/topperformance') }}">
             <i class="fas fa-fw fa-star"></i>
@@ -140,6 +156,7 @@
         </a>
     </li>
 
+    <!-- Nav Item - Logout -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt"></i>

@@ -11,12 +11,16 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('reseller1_id')->nullable();
             $table->integer('total_sales');
             $table->integer('return');
-            $table->decimal('profit', 8, 2);
+            $table->integer('sold');
+            $table->decimal('payment', 15, 2);
+            $table->decimal('profit', 15, 2);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('reseller1_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

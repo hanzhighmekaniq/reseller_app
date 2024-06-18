@@ -13,20 +13,24 @@ class OrderController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $today = now()->toDateString(); // Ambil tanggal hari ini dalam format YYYY-MM-DD
+    
         if ($user->role == 'pemilik') {
-            $orders = Order::all();
+            $orders = Order::whereDate('created_at', $today)->get();
         } elseif ($user->role == 'bos') {
             $orders = Order::where('user_id', $user->id)
                         ->orWhereHas('user', function ($query) use ($user) {
                             $query->where('bos_id', $user->id);
                         })
+                        ->whereDate('created_at', $today)
                         ->get();
         } else {
-            $orders = $user->orders;
+            $orders = $user->orders()->whereDate('created_at', $today)->get();
         }
-
+    
         return view('page.kelolapenjualan', compact('orders'));
     }
+    
 
     public function create()
     {
@@ -60,22 +64,5 @@ class OrderController extends Controller
         return redirect()->route('kelolapenjualan')->with('success', 'Penjualan Telah Dibuat');
     }
 
-    public function report()
-    {
-        $user = Auth::user();
 
-        if ($user->role == 'pemilik') {
-            $bosOrders = User::where('role', 'bos')->with(['orders' => function($query) {
-                $query->whereDate('created_at', now()->toDateString());
-            }])->get();
-        } elseif ($user->role == 'bos') {
-            $anggotaOrders = User::where('bos_id', $user->id)->with(['orders' => function($query) {
-                $query->whereDate('created_at', now()->toDateString());
-            }])->get();
-        } else {
-            return redirect()->back();
-        }
-
-        return view('orders.report', compact('bosOrders', 'anggotaOrders'));
-    }
 }

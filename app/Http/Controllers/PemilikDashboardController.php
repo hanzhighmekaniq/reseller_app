@@ -12,7 +12,7 @@ class PemilikDashboardController extends Controller
 {
     public function index()
     {
-        $totalAdmins = User::where('role', 'admin')->count();
+        $totalAdmins = User::where('role', 'bos')->count();
         $totalProducts = Product::count();
         $totalOrders = Order::count();
         $currentMonthSales = Order::whereMonth('created_at', Carbon::now()->month)->sum('total_price');

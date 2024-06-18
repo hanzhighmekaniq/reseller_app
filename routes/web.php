@@ -43,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/admin', [AdminDashboardController::class, 'index'])->name('dashboard.admin');
 
     Route::get('topperformance', [TopPerformanceController::class, 'index'])->name('topperformance');
+    Route::get('/reports', [ReportController::class, 'index'])->middleware('auth');
+    Route::get('/reports/{type}', [ReportController::class, 'show'])->middleware('auth');
 });
 
 Auth::routes();
