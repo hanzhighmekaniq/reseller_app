@@ -11,6 +11,7 @@
 </head>
 
 <body id="page-top">
+    
     <div id="wrapper">
         <!-- Sidebar -->
         @include('partials.sidebar')
@@ -25,6 +26,9 @@
                 <!-- Main Content -->
                 <div class="container-fluid">
                     @yield('content')
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+                    @yield('scripts')
                 </div>
                 <!-- End of Main Content -->
             </div>
@@ -33,6 +37,7 @@
             @include('partials.footer')
             <!-- End of Footer -->
         </div>
+        
     </div>
 
     <script src="{{ asset('sb-admin-2/vendor/jquery/jquery.min.js') }}"></script>
