@@ -22,6 +22,7 @@ class ProductController extends Controller
 
         return view('page.produk', compact('products'));
     }
+
     public function create()
     {
         return view('page.createproduk');
@@ -33,6 +34,7 @@ class ProductController extends Controller
             'name' => 'required',
             'original_price' => 'required|numeric',
             'sale_price' => 'required|numeric',
+            'qty' => 'required|integer',
             'image' => 'required|image|mimes:png,jpg,jpeg,webp,gif,svg|max:2048',
         ]);
 
@@ -51,7 +53,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        return view('page.show', compact('product'));
+        return view('page.produk', compact('product'));
     }
 
     public function edit(Product $product)
@@ -76,7 +78,7 @@ class ProductController extends Controller
 
         $product->update([
             'name' => $request->name,
-            'qty'=> $request -> qty,
+            'qty' => $request->qty,
             'original_price' => $request->original_price,
             'sale_price' => $request->sale_price,
         ]);
