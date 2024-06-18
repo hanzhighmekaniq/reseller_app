@@ -1,16 +1,17 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PemilikDashboardController;
-use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\AnggotaDashboardController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReportController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\TopPerformanceController;
+use App\Http\Controllers\AnggotaDashboardController;
+use App\Http\Controllers\PemilikDashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,7 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('orders', OrderController::class)->only(['index', 'create', 'store']);
     Route::resource('reports', ReportController::class);
     Route::resource('users', UserController::class);
-    
+
 
     Route::post('approve-member/{id}', [UserController::class, 'approveMember'])->name('approve-member');
 
