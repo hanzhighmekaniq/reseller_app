@@ -1,0 +1,13 @@
+@keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animasi-spin {
+            animation: spin 10s linear infinite; /* Ubah nilai 2s untuk mengatur kecepatan animasi */
+            margin: 20px;
+        }
