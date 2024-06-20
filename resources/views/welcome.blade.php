@@ -16,41 +16,49 @@
 
     {{-- BODY --}}
     <div class="w-full h-full">
-        <div class="pt-14 pb-4 text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 lg:gap-10 xl:gap-2 lg:pt-18">
-            <div class="xl:px-20">
+        <div
+            class="pt-16  text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 xl:grid-cols-5 lg:gap-10 xl:gap-2 lg:pt-18 2xl:grid-cols-7">
+            <div class="m-auto xl:col-span-2 2xl:col-span-3">
                 <div class="flex justify-start items-center space-x-2 p-4 md:flex-col md:items-start">
-                    <img class="h-24 md:h-28 md:ml-2 lg:h-44" src="{{ asset('sb-admin-2/img/SELLER_new.png') }}"
-                        alt="">
-                    <p class="text-6xl lg:text-8xl poppins-extrabold-italic pl-0 text-sky-800">SELLER.IN</p>
+                    <img class="h-24 ml-4 md:h-28 lg:h-44 xl:h-56 2xl:h-72  "
+                        src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="">
+                    <p class="text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl poppins-extrabold-italic text-sky-800">
+                        SELLER.IN</p>
                 </div>
-                <p class="text-base font-sans px-4 text-xl">Tingkatkan kualitas bisnis anda bersama <span
+                <p class="text-base font-sans  px-4 text-xl">Tingkatkan kualitas bisnis anda bersama <span
                         class="russo-one-regular">SELLER.IN</span></p>
                 <a href="/register" class="bg-sky-800 mt-4 mx-4 py-3 px-6 rounded-md inline-block">
                     <p class="w-auto h-auto text-white">GABUNG/DAFTAR</p>
                 </a>
             </div>
-            <div class="rounded-xl md:mr-4 lg:mr-6 xl:mr-10">
+            <div class="rounded-xl xl:col-span-3 2xl:col-span-4">
                 <img src="{{ asset('landing-page/img/tahu-pentol.png') }}" alt="TahuPentol"
-                    class=" w-full p-4 mt-4 h-96 rounded-3xl object-cover md:h-96 lg:h-[400px] sm:h-full ">
+                    class=" w-full p-4 m-auto h-96 rounded-3xl object-cover md:h-96 lg:h-[500px] xl:h-[650px] 2xl:h-[800px] sm:h-full ">
             </div>
         </div>
-        <div class="md:grid md:grid-cols-2 lg:gap-10 xl:gap-2">
-            <div class="rounded-xl  md:mr-4 lg:ml-6 xl:ml-10">
+
+
+
+
+
+        <div class="md:grid grid md:grid-cols-1 2xl:grid-cols-7">
+            <div class="rounded-xl 2xl:col-span-5 m-auto">
                 <img src="{{ asset('landing-page/img/piscok.jpg') }}" alt="TahuPentol"
-                    class=" w-full p-4 mt-4 h-96 rounded-3xl object-cover lg:h-[400px] sm:h-full">
+                    class=" w-full m-auto rounded-3xl object-cover p-4 2xl:h-[800px] h-full">
             </div>
-            <div class="flex justify-start items-start p-4 md:flex-col md:items-end">
-                <p class="boogaloo-regular px-4 text-center text-6xl text-sky-800 ">
+            <div class="flex justify-start p-4 mx-auto items-start 2xl:col-span-2 md:flex-col md:items-end">
+                <p class="boogaloo-regular text-center text-6xl text-sky-800">
                     About Seller.in <br>
-                    <span class="text-xl p-0 font-serif font-normal leading-normal">
+                    <span class="text-xl p-0 font-serif font-normal text-end justify-end items-end leading-normal">
                         "Seller" adalah istilah yang digunakan untuk merujuk kepada seseorang atau entitas yang menjual
                         barang atau jasa kepada konsumen atau pelanggan. Istilah ini umumnya digunakan dalam konteks
-                        perdagangan, baik secara offline maupun online.
-                        SELLER.IN sebuah perusahaan yang menciptakan peluang pekerjaan bagi IRT Dan Pelajar.
-                        Mengkombinasikan IRT (Ibu Rumah Tangga) membuat produk seperti:
+                        perdagangan, baik secara offline maupun online. SELLER.IN sebuah perusahaan yang menciptakan
+                        peluang pekerjaan bagi IRT Dan Pelajar. Mengkombinasikan IRT (Ibu Rumah Tangga) membuat produk
+                        seperti:
                     </span>
                 </p>
             </div>
+
         </div>
         <div class="h-auto w-full bg-slate-200">
             <p class="boogaloo-regular text-sky-800 text-6xl my-6 text-center">PRODUCT</p>
@@ -108,21 +116,25 @@
 
         <footer class="bg-gray-300">
             <div class="items-center justify-center text-center m-auto mt-10 pt-10">
-                <p class="text-2xl footer-title text-slate-800 ml-4">Hubungi Kami<br> <span class="text-lg">Untuk informasi lebih lanjut</span></p>
+                <p class="text-2xl footer-title text-slate-800 ml-4">Hubungi Kami<br> <span class="text-lg">Untuk
+                        informasi lebih lanjut</span></p>
             </div>
             <div
                 class="grid grid-cols-1  p-10 gap-4  text-neutral-content sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:w-[70%] lg:m-auto ">
                 <div class="flex items-center xl:justify-center">
                     <img src="{{ asset('landing-page/img/email.png') }}" class="w-28 p-4">
-                    <p class="text-2xl footer-title text-slate-800 ml-4">Email<br> <span class="text-base">info@seller.in</span></p>
+                    <p class="text-2xl footer-title text-slate-800 ml-4">Email<br> <span
+                            class="text-base">info@seller.in</span></p>
                 </div>
                 <div class="flex items-center xl:justify-center">
                     <img src="{{ asset('landing-page/img/location.png') }}" class="w-28 p-4">
-                    <p class="text-2xl footer-title text-slate-800 ml-4">Alamat<br><span class="text-base">A108 Adam Street, New York, NY 535022</span></p>
+                    <p class="text-2xl footer-title text-slate-800 ml-4">Alamat<br><span class="text-base">A108 Adam
+                            Street, New York, NY 535022</span></p>
                 </div>
                 <div class="flex items-center xl:justify-center">
                     <img src="{{ asset('landing-page/img/phone-call.png') }}" class="w-28 p-4">
-                    <p class="text-2xl footer-title text-slate-800 ml-4">Telepon<br><span class="text-base">+1 5589 55488 55</span></p>
+                    <p class="text-2xl footer-title text-slate-800 ml-4">Telepon<br><span class="text-base">+1 5589
+                            55488 55</span></p>
                 </div>
             </div>
             <div class="container m-auto py-2">
