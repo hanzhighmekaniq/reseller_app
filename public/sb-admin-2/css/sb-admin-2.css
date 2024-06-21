@@ -8,7 +8,7 @@
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) 
  */
 :root {
   --blue: #4e73df;
@@ -10962,6 +10962,19 @@ form.user .btn-user {
   background-color: #2d4373;
   border-color: #dfdfdf;
 }
+
+.card .card-body .img-thumbnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .btn-facebook:not(:disabled):not(.disabled):active:focus, .btn-facebook:not(:disabled):not(.disabled).active:focus,
 .show > .btn-facebook.dropdown-toggle:focus {

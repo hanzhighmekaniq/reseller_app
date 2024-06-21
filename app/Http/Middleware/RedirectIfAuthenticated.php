@@ -15,7 +15,7 @@ class RedirectIfAuthenticated
 
             if ($user->role == 'pemilik') {
                 return redirect('/dashboard/pemilik');
-            } elseif ($user->role == 'admin') {
+            } elseif ($user->role == 'bos') {
                 return redirect('/dashboard/admin');
             } elseif ($user->role == 'anggota') {
                 return redirect('/dashboard/anggota');

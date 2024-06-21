@@ -28,7 +28,7 @@
                 <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-sans  px-4 2xl:pb-4">Tingkatkan kualitas bisnis anda bersama <span
                         class="russo-one-regular">SELLER.IN</span><br>Klik tombol dibawah ini untuk mendaftarkan diri sebagai RESELLER</p>
                 <a href="/register" class="bg-sky-800 mt-4 mx-4 py-3 px-6 rounded-md inline-block">
-                    <p class="w-auto h-auto text-white">GABUNG/DAFTAR</p>
+                    <p class="w-auto h-auto text-white">DAFTAR</p>
                 </a>
             </div>
             <div class="rounded-xl xl:col-span-3 2xl:col-span-4">

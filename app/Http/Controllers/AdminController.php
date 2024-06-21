@@ -34,6 +34,7 @@ class AdminController extends Controller
             'no_wa' => $request->no_wa,
             'password' => Hash::make($request->password),
             'role' => 'bos',
+            'foto' => 'profile/fotodefault.jpg',
         ]);
 
         return redirect()->route('admins.index')->with('success', 'Admin berhasil ditambahkan.');

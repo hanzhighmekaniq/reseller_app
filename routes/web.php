@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\TopPerformanceController;
 use App\Http\Controllers\AnggotaDashboardController;
 use App\Http\Controllers\PemilikDashboardController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('orders', OrderController::class)->only(['index', 'create', 'store']);
     Route::resource('reports', ReportController::class);
     Route::resource('users', UserController::class);
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+
 
 
     Route::post('approve-member/{id}', [UserController::class, 'approveMember'])->name('approve-member');

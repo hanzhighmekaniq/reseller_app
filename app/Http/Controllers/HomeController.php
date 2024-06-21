@@ -18,7 +18,7 @@ class HomeController extends Controller
 
         if ($user->role === 'pemilik') {
             return redirect()->route('dashboard.pemilik');
-        } elseif ($user->role === 'admin') {
+        } elseif ($user->role === 'bos') {
             return redirect()->route('dashboard.admin');
         } elseif ($user->role === 'anggota') {
             return redirect()->route('dashboard.anggota');
