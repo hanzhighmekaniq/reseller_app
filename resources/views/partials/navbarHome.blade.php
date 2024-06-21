@@ -43,12 +43,24 @@
                     <div class="drawer-side">
                         <label for="my-drawer" class="drawer-overlay"></label>
                         <div class="menu p-4 w-80 min-h-full bg-gray-300 text-base-content">
+                            <a href="#" class="flex items-center justify-start bg-transparent border-none px-2">
+                                <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo"
+                                    class="h-12 mr-2 ml-4 my-4">
+                                <span
+                                    class="font-sans text-sky-800 text-4xl font-bold pr-2 russo-one-regular">SELLER.IN</span>
+                            </a>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="#"
-                                    class="block w-full px-4 py-2 text-slate-800">Home</a></button>
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Home</a></button>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="#"
-                                    class="block w-full px-4 py-2 text-slate-800">Kontak</a></button>
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Abaout</a></button>
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Product</a></button>
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Kontak</a></button>
+                            <div class="flex justify-center py-4 items-center">
+                            </div>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="/login"
-                                    class="block w-full px-4 py-2 text-slate-800">Login</a></button>
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Login</a></button>
                         </div>
                     </div>
                 </div>
@@ -77,6 +89,10 @@
                             class="text-base font-semibold text-white" href="/login">Login</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
                             class="text-base font-semibold text-slate-800" href="#">Home</a></li>
+                    <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
+                            class="text-base font-semibold text-slate-800" href="#">About</a></li>
+                    <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
+                            class="text-base font-semibold text-slate-800" href="#">Product</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-400"><a
                             class="text-base font-semibold text-slate-800" href="#">Kontak</a></li>
                 </ul>

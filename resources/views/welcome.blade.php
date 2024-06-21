@@ -20,13 +20,13 @@
             class="pt-16  text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 xl:grid-cols-5 lg:gap-10 xl:gap-2 lg:pt-18 2xl:grid-cols-7">
             <div class="m-auto xl:col-span-2 2xl:col-span-3">
                 <div class="flex justify-start items-center space-x-2 p-4 md:flex-col md:items-start">
-                    <img class="h-24 ml-4 md:h-28 lg:h-44 xl:h-56 2xl:h-72  "
+                    <img class="h-24 ml-4 md:h-28 lg:h-44 xl:h-56 2xl:h-72 md:mb-4 lg:mb-6 xl:mb-8 2xl:mb-10 "
                         src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="">
-                    <p class="text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl poppins-extrabold-italic text-sky-800">
+                    <p class="text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl  poppins-extrabold-italic text-sky-800">
                         SELLER.IN</p>
                 </div>
-                <p class="text-base font-sans  px-4 text-xl">Tingkatkan kualitas bisnis anda bersama <span
-                        class="russo-one-regular">SELLER.IN</span></p>
+                <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-sans  px-4 2xl:pb-4">Tingkatkan kualitas bisnis anda bersama <span
+                        class="russo-one-regular">SELLER.IN</span><br>Klik tombol dibawah ini untuk mendaftarkan diri sebagai RESELLER</p>
                 <a href="/register" class="bg-sky-800 mt-4 mx-4 py-3 px-6 rounded-md inline-block">
                     <p class="w-auto h-auto text-white">GABUNG/DAFTAR</p>
                 </a>
