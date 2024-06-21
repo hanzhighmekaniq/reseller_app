@@ -53,28 +53,42 @@
 
         var productId = productSelect.value;
         var productName = productSelect.options[productSelect.selectedIndex].text;
-        var quantity = quantityInput.value;
+        var quantity = parseInt(quantityInput.value);
 
         if (productId && quantity) {
             var table = document.getElementById('salesListTable').getElementsByTagName('tbody')[0];
-            var newRow = table.insertRow();
-            var productCell = newRow.insertCell(0);
-            var quantityCell = newRow.insertCell(1);
-            var actionCell = newRow.insertCell(2);
+            var existingRow = Array.from(table.rows).find(row => row.cells[0].textContent === productName);
 
-            productCell.textContent = productName;
-            quantityCell.textContent = quantity;
-            actionCell.innerHTML = '<button type="button" class="btn btn-danger remove-product">Remove</button>';
+            if (existingRow) {
+                var existingQuantity = parseInt(existingRow.cells[1].textContent);
+                var newQuantity = existingQuantity + quantity;
+                existingRow.cells[1].textContent = newQuantity;
 
-            // Add hidden inputs to the form for submission
-            var orderForm = document.getElementById('orderForm');
-            orderForm.innerHTML += `<input type="hidden" name="product_id[]" value="${productId}">`;
-            orderForm.innerHTML += `<input type="hidden" name="quantity[]" value="${quantity}">`;
+                // Update hidden input values
+                var existingInput = document.querySelector(`input[name="quantity[]"][data-product-id="${productId}"]`);
+                existingInput.value = newQuantity;
+            } else {
+                var newRow = table.insertRow();
+                var productCell = newRow.insertCell(0);
+                var quantityCell = newRow.insertCell(1);
+                var actionCell = newRow.insertCell(2);
 
-            // Add event listener to remove button
-            actionCell.querySelector('.remove-product').addEventListener('click', function() {
-                newRow.remove();
-            });
+                productCell.textContent = productName;
+                quantityCell.textContent = quantity;
+                actionCell.innerHTML = '<button type="button" class="btn btn-danger remove-product">Remove</button>';
+
+                // Add hidden inputs to the form for submission
+                var orderForm = document.getElementById('orderForm');
+                orderForm.innerHTML += `<input type="hidden" name="product_id[]" value="${productId}">`;
+                orderForm.innerHTML += `<input type="hidden" name="quantity[]" value="${quantity}" data-product-id="${productId}">`;
+
+                // Add event listener to remove button
+                actionCell.querySelector('.remove-product').addEventListener('click', function() {
+                    newRow.remove();
+                    document.querySelector(`input[name="product_id[]"][value="${productId}"]`).remove();
+                    document.querySelector(`input[name="quantity[]"][data-product-id="${productId}"]`).remove();
+                });
+            }
 
             // Clear the product select and quantity input for new entries
             productSelect.value = '';
