@@ -32,7 +32,7 @@
                 </a>
             </div>
             <div class="rounded-xl xl:col-span-3 2xl:col-span-4">
-                <img src="{{ asset('landing-page/img/tahu-pentol.png') }}" alt="TahuPentol"
+                <img src="{{ asset('landing-page/img/fotohero.png') }}" alt="TahuPentol"
                     class=" w-full p-4 m-auto h-96 rounded-3xl object-cover md:h-96 lg:h-[500px] xl:h-[650px] 2xl:h-[800px] sm:h-full ">
             </div>
         </div>
