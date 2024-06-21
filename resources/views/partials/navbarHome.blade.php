@@ -56,7 +56,7 @@
                             <button class="hover:bg-orange-400 text-left w-full"><a href="#"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Product</a></button>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="#"
-                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Kontak</a></button>
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Contact</a></button>
                             <div class="flex justify-center py-4 items-center">
                             </div>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="/login"
