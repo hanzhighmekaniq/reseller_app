@@ -8,8 +8,6 @@
         <div class="sidebar-brand-text mx-3">Seller.in</div>
     </a>
 
-
-{{-- SIDEBAR PEMILIK --}}
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
@@ -28,6 +26,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+{{-- SIDEBAR PEMILIK --}}
     <!-- Menu berdasarkan peran pengguna -->
     @if(Auth::user()->role == 'pemilik')
         <!-- Heading -->
@@ -71,6 +70,7 @@
         <hr class="sidebar-divider">
     @endif
 
+{{-- SIDEBAR ADMIN --}}
     @if(Auth::user()->role == 'bos')
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -97,6 +97,7 @@
         <hr class="sidebar-divider">
     @endif
 
+{{-- SIDEBAR ANGGOTA --}}
     @if(Auth::user()->role == 'anggota')
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -122,7 +123,8 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
     @endif
-    
+     
+{{-- SIDEBAR SEMUA --}}
     <!-- Nav Item - Profile -->
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/profile') }}">
