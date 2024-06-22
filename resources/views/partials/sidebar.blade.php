@@ -84,18 +84,42 @@
                 <span>Manajemen Anggota</span>
             </a>
         </li>
-
+            <!-- Nav Item - Kelola Penjualan -->
+            <li class="nav-item">
+                <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-fw fa-chart-bar"></i>
+                    <span>Penjualan</span>
+                </a>
+                <ul class="collapse list-unstyled" id="orderSubmenu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('orders/create') }}">Drop Penjualan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('kelolapenjualan') }}">Data Penjualan</a>
+                    </li>
+                </ul>
+            </li>
         <!-- Nav Item - Report Management -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('/reports') }}">
+            <a class="nav-link" href="#reportSubmenuAdmin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Manajemen Laporan</span>
             </a>
+            <ul class="collapse list-unstyled" id="reportSubmenuAdmin">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/reports/saya') }}">Laporan Saya</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/reports/anggota') }}">Laporan Anggota</a>
+                </li>
+            </ul>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
     @endif
+
+
 
 {{-- SIDEBAR ANGGOTA --}}
     @if(Auth::user()->role == 'anggota')
@@ -104,22 +128,21 @@
             User Area
         </div>
 
-        <!-- Nav Item - Profile -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url('/profile') }}">
-                <i class="fas fa-fw fa-user"></i>
-                <span>Profil Saya</span>
-            </a>
-        </li>
-
         <!-- Nav Item - Orders -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('/orders') }}">
+            <a class="nav-link" href="#orderSubmenuAnggota" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-fw fa-shopping-cart"></i>
-                <span>Pesanan Saya</span>
+                <span>Kelola Penjualan</span>
             </a>
+            <ul class="collapse list-unstyled" id="orderSubmenuAnggota">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/orders') }}">Data Penjualan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/buatlaporananggota') }}">Laporkan Penjualan</a>
+                </li>
+            </ul>
         </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
     @endif

@@ -27,18 +27,22 @@
         <div class="form-group">
             <label for="current_password">Password Lama</label>
             <input type="password" name="current_password" id="current_password" class="form-control">
+            <small class="form-text text-muted">Kosongkan jika tidak diubah</small>
         </div>
         <div class="form-group">
             <label for="new_password">Password Baru</label>
             <input type="password" name="new_password" id="new_password" class="form-control">
+            <small class="form-text text-muted">Kosongkan jika tidak diubah</small>
         </div>
         <div class="form-group">
             <label for="new_password_confirmation">Konfirmasi Password Baru</label>
             <input type="password" name="new_password_confirmation" id="new_password_confirmation" class="form-control">
+            <small class="form-text text-muted">Kosongkan jika tidak diubah</small>
         </div>
         <div class="form-group">
             <label for="foto">Foto</label>
             <input type="file" name="foto" id="foto" class="form-control">
+            <small class="form-text text-muted">Kosongkan jika tidak diubah</small>
         </div>
         <button type="submit" class="btn btn-primary">Update Profil</button>
     </form>

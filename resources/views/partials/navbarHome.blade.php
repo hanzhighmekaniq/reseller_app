@@ -43,19 +43,19 @@
                     <div class="drawer-side">
                         <label for="my-drawer" class="drawer-overlay"></label>
                         <div class="menu p-4 w-80 min-h-full bg-gray-300 text-base-content">
-                            <a href="#" class="flex items-center justify-start bg-transparent border-none px-2">
+                            <a href="#home" class="flex items-center justify-start bg-transparent border-none px-2">
                                 <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo"
                                     class="h-12 mr-2 ml-4 my-4">
                                 <span
                                     class="font-sans text-sky-800 text-4xl font-bold pr-2 russo-one-regular">SELLER.IN</span>
                             </a>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#home"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Home</a></button>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#about"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Abaout</a></button>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#product"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Product</a></button>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#contact"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Contact</a></button>
                             <div class="flex justify-center py-4 items-center">
                             </div>
@@ -88,13 +88,13 @@
                     <li class="items-center justify-center rounded-md hover:bg-orange-500 bg-orange-500"><a
                             class="text-base font-semibold text-white" href="/login">Login</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#">Home</a></li>
+                            class="text-base font-semibold text-slate-800" href="#home">Home</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#">About</a></li>
+                            class="text-base font-semibold text-slate-800" href="#about">About</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#">Product</a></li>
+                            class="text-base font-semibold text-slate-800" href="#product">Product</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-400"><a
-                            class="text-base font-semibold text-slate-800" href="#">Kontak</a></li>
+                            class="text-base font-semibold text-slate-800" href="#kontak">Kontak</a></li>
                 </ul>
             </div>
         </div>

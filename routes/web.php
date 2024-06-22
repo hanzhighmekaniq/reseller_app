@@ -13,16 +13,34 @@ use App\Http\Controllers\TopPerformanceController;
 use App\Http\Controllers\AnggotaDashboardController;
 use App\Http\Controllers\PemilikDashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AnggotaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Rute untuk pemilik
 Route::middleware(['auth', 'role:pemilik'])->group(function () {
     Route::resource('admins', AdminController::class);
     Route::get('/orders/report', [OrderController::class, 'report'])->name('orders.report');
     Route::get('/orders/today', [OrderController::class, 'index'])->name('orders.today');
     Route::get('/kelolapenjualan', [OrderController::class, 'index'])->name('kelolapenjualan');
+});
+
+
+// Rute untuk bos
+Route::middleware(['auth', 'role:bos'])->group(function () {
+    Route::resource('anggota', AnggotaController::class);
+    Route::get('/buatlaporanadmin', [ReportController::class, 'createAdmin'])->name('reports.createAdmin');
+    Route::post('/reports/admin', [ReportController::class, 'storeAdmin'])->name('reports.storeAdmin');
+    Route::get('/datapenjualanadmin', [ReportController::class, 'indexAdmin'])->name('reports.indexAdmin');
+});
+
+// Rute untuk anggota
+Route::middleware(['auth', 'role:anggota'])->group(function () {
+    Route::get('/buatlaporananggota', [ReportController::class, 'createAnggota'])->name('reports.createAnggota');
+    Route::post('/reports/anggota', [ReportController::class, 'storeAnggota'])->name('reports.storeAnggota');
+    Route::get('/datapenjualananggota', [ReportController::class, 'indexAnggota'])->name('reports.indexAnggota');
 });
 
 Route::middleware(['auth'])->group(function () {
