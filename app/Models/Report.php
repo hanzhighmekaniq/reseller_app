@@ -11,7 +11,8 @@ class Report extends Model
 
     protected $fillable = [
         'user_id',
-        'reseller1_id', // Tambahkan reseller1_id jika diperlukan
+        'reseller1_id', 
+        'product_id',
         'total_sales',
         'return',
         'profit',

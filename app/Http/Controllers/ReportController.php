@@ -30,19 +30,24 @@ class ReportController extends Controller
             $totalSoldAndReturn += $productData['sold'] + $productData['return'];
         }
     
-        if ($totalSoldAndReturn !== $request->total_sales) {
+        // Debugging lines
+        \Log::info('Total Sales from request: ' . $request->total_sales);
+        \Log::info('Total Sold and Return calculated: ' . $totalSoldAndReturn);
+    
+        if ($totalSoldAndReturn != $request->total_sales) {
             return redirect()->back()->with('error', 'Jumlah sold dan return tidak sesuai dengan total barang yang dibawa.');
         }
     
         foreach ($request->products as $productData) {
             $product = Product::find($productData['product_id']);
             $profit = $productData['sold'] * 500;
-            $payment = ($product->original_price - 500) * $productData['sold'];
+            $payment = ($product->sale_price - 500) * $productData['sold'];
     
             Report::create([
                 'user_id' => Auth::id(),
-                'reseller1_id' => Auth::user()->bos_id, // Mendapatkan bos_id dari user yang sedang login
-                'total_sales' => $request->total_sales,
+                'reseller1_id' => Auth::user()->bos_id, 
+                'product_id' => $productData['product_id'], 
+                'total_sales' => $productData['sold'] + $productData['return'],
                 'sold' => $productData['sold'],
                 'return' => $productData['return'],
                 'payment' => $payment,
@@ -76,55 +81,67 @@ class ReportController extends Controller
             'products.*.sold' => 'required|integer',
             'products.*.return' => 'required|integer',
         ]);
-
+    
         $totalSoldAndReturn = 0;
         foreach ($request->products as $productData) {
             $totalSoldAndReturn += $productData['sold'] + $productData['return'];
         }
-
-        if ($totalSoldAndReturn !== $request->total_sales) {
+    
+        // Debugging lines
+        \Log::info('Total Sales from request: ' . $request->total_sales);
+        \Log::info('Total Sold and Return calculated: ' . $totalSoldAndReturn);
+    
+        if ($totalSoldAndReturn != $request->total_sales) {
             return redirect()->back()->with('error', 'Jumlah sold dan return tidak sesuai dengan total barang yang dibawa.');
         }
-
+    
         $adminProfit = 0;
         $adminPayment = 0;
-
+    
         foreach ($request->products as $productData) {
             $product = Product::find($productData['product_id']);
             $profit = $productData['sold'] * 500;
-            $payment = ($product->original_price - 500) * $productData['sold'];
-
+            $payment = ($product->sale_price - 1000) * $productData['sold'];
+    
             Report::create([
                 'user_id' => Auth::id(),
-                'reseller1_id' => Auth::id(), // reseller1_id diisi dengan ID admin yang sedang login
-                'total_sales' => $request->total_sales,
+     
+                'product_id' => $productData['product_id'],
+                'total_sales' => $productData['sold'] + $productData['return'],
                 'sold' => $productData['sold'],
                 'return' => $productData['return'],
                 'payment' => $payment,
                 'profit' => $profit,
             ]);
-
+    
             $adminProfit += $profit;
             $adminPayment += $payment;
         }
-
+    
         // Tambahkan profit dan payment anggota ke profit dan payment admin
         $anggotaReports = Report::where('reseller1_id', Auth::id())->get();
         foreach ($anggotaReports as $report) {
             $adminProfit += $report->profit;
             $adminPayment += $report->payment;
         }
-
+    
         return redirect()->route('reports.indexAdmin')->with('success', 'Laporan berhasil ditambahkan.');
     }
-
     
 
     public function indexAdmin()
     {
         $reports = Report::where('user_id', Auth::id())->get();
-        return view('page.datapenjualanadmin', compact('reports'));
+        $resellerReports = Report::where('reseller1_id', Auth::id())->get();
+        return view('page.datapenjualanadmin', compact('reports', 'resellerReports'));
     }
+
+    public function indexReseller()
+    {
+        $resellerReports = Report::where('reseller1_id', Auth::id())->get();
+        return view('page.datapenjualananggotaadmin', compact('resellerReports'));
+    }
+
     
 
     public function show($type)

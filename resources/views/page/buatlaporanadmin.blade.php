@@ -4,6 +4,12 @@
 <div class="container-fluid">
     <h1 class="h3 mb-4 text-gray-800">Laporkan Penjualan Admin</h1>
 
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-md-12">
             <div class="card shadow mb-4">
@@ -20,7 +26,7 @@
                                     <label for="product_id">Produk</label>
                                     <select class="form-control" name="products[0][product_id]" required>
                                         @foreach($products as $product)
-                                            <option value="{{ $product->id }}">{{ $product->name }} - {{ $product->sale_price }}</option>
+                                            <option value="{{ $product->id }}">{{ $product->name }} </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -56,7 +62,7 @@
                 <label for="product_id">Produk</label>
                 <select class="form-control" name="products[${productIndex}][product_id]" required>
                     @foreach($products as $product)
-                        <option value="{{ $product->id }}">{{ $product->name }} - {{ $product->sale_price }}</option>
+                        <option value="{{ $product->id }}">{{ $product->name }} </option>
                     @endforeach
                 </select>
             </div>

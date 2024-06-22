@@ -10,11 +10,9 @@
         </div>
     @endif
 
-    <div class="row mt-4">
-        <div class="col-md-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Riwayat Penjualan Saya</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Laporan Penjualan Reseller Saya</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -22,6 +20,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Reseller</th>
                                     <th>Produk</th>
                                     <th>Produk Yang Dibawa</th>
                                     <th>Sold</th>
@@ -32,9 +31,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($reports as $report)
+                                @foreach ($resellerReports as $report)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $report->user->name ?? 'Unknown Reseller' }}</td> <!-- Tambahkan pengecekan null -->
                                     <td>{{ $report->product->name ?? 'Unknown Product' }}</td> <!-- Tambahkan pengecekan null -->
                                     <td>{{ $report->total_sales }}</td>
                                     <td>{{ $report->sold }}</td>
@@ -50,31 +50,6 @@
                 </div>
             </div>
 
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Total Laporan Penjualan Saya</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Total Sales</th>
-                                    <th>Total Payment</th>
-                                    <th>Total Profit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ $reports->sum('total_sales') + $resellerReports->sum('total_sales') }}</td>
-                                    <td>Rp{{ number_format($reports->sum('payment') + $resellerReports->sum('payment'), 0, ',', '.') }}</td>
-                                    <td>Rp{{ number_format($reports->sum('profit') + $resellerReports->sum('profit'), 0, ',', '.') }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>

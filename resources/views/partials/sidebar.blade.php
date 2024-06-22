@@ -86,16 +86,16 @@
         </li>
             <!-- Nav Item - Kelola Penjualan -->
             <li class="nav-item">
-                <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-fw fa-chart-bar"></i>
-                    <span>Penjualan</span>
+                <a class="nav-link" href="#orderSubmenuAdmin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Kelola Penjualan</span>
                 </a>
-                <ul class="collapse list-unstyled" id="orderSubmenu">
+                <ul class="collapse list-unstyled" id="orderSubmenuAdmin">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('orders/create') }}">Drop Penjualan</a>
+                        <a class="nav-link" href="{{ url('/datapenjualanadmin') }}">Data Penjualan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('kelolapenjualan') }}">Data Penjualan</a>
+                        <a class="nav-link" href="{{ url('/buatlaporanadmin') }}">Laporkan Penjualan</a>
                     </li>
                 </ul>
             </li>
@@ -107,10 +107,13 @@
             </a>
             <ul class="collapse list-unstyled" id="reportSubmenuAdmin">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/reports/saya') }}">Laporan Saya</a>
+                    <a class="nav-link" href="{{ url('/buatlaporanadmin') }}">Buat Laporan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/reports/anggota') }}">Laporan Anggota</a>
+                    <a class="nav-link" href="{{ url('datapenjualanadmin') }}">Laporan Saya</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('datapenjualananggotaadmin') }}">Laporan Anggota</a>
                 </li>
             </ul>
         </li>
@@ -136,7 +139,7 @@
             </a>
             <ul class="collapse list-unstyled" id="orderSubmenuAnggota">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/orders') }}">Data Penjualan</a>
+                    <a class="nav-link" href="{{ url('/datapenjualananggota') }}">Data Penjualan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/buatlaporananggota') }}">Laporkan Penjualan</a>

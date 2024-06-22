@@ -26,7 +26,7 @@
                                     <label for="product_id">Produk</label>
                                     <select class="form-control" name="products[0][product_id]" required>
                                         @foreach($products as $product)
-                                            <option value="{{ $product->id }}">{{ $product->name }} - {{ $product->original_price }}</option>
+                                            <option value="{{ $product->id }}">{{ $product->name }} </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -62,7 +62,7 @@
                 <label for="product_id">Produk</label>
                 <select class="form-control" name="products[${productIndex}][product_id]" required>
                     @foreach($products as $product)
-                        <option value="{{ $product->id }}">{{ $product->name }} - {{ $product->original_price }}</option>
+                        <option value="{{ $product->id }}">{{ $product->name }} </option>
                     @endforeach
                 </select>
             </div>

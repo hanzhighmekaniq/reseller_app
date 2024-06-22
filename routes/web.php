@@ -28,12 +28,13 @@ Route::middleware(['auth', 'role:pemilik'])->group(function () {
 });
 
 
-// Rute untuk bos
+// Rute untuk admin
 Route::middleware(['auth', 'role:bos'])->group(function () {
     Route::resource('anggota', AnggotaController::class);
     Route::get('/buatlaporanadmin', [ReportController::class, 'createAdmin'])->name('reports.createAdmin');
     Route::post('/reports/admin', [ReportController::class, 'storeAdmin'])->name('reports.storeAdmin');
     Route::get('/datapenjualanadmin', [ReportController::class, 'indexAdmin'])->name('reports.indexAdmin');
+    Route::get('/datapenjualananggotaadmin', [ReportController::class, 'indexReseller'])->name('reports.indexReseller');
 });
 
 // Rute untuk anggota

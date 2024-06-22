@@ -4,11 +4,17 @@
 <div class="container-fluid">
     <h1 class="h3 mb-4 text-gray-800">Data Penjualan Anggota</h1>
 
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Data Penjualan</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Riwayat Penjualan</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -17,32 +23,25 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Produk</th>
-                                    <th>Total Sales</th>
+                                    <th>Produk Yang Dibawa</th>
                                     <th>Sold</th>
                                     <th>Return</th>
-                                    <th>Profit</th>
                                     <th>Payment</th>
-                                    <th>Action</th>
+                                    <th>Profit</th>
+                                    <th>Tanggal / Jam</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($reports as $report)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $report->product->name }}</td>
-                                    <td>{{ $report->total_sales }}</td>
+                                    <td>{{ $report->product->name ?? 'Unknown Product' }}</td> <!-- Pengecekan null -->
+                                    <td>{{ $report->sold + $report->return }}</td>
                                     <td>{{ $report->sold }}</td>
                                     <td>{{ $report->return }}</td>
-                                    <td>{{ $report->profit }}</td>
-                                    <td>{{ $report->payment }}</td>
-                                    <td>
-                                        <a href="{{ route('reports.edit', $report->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{ route('reports.destroy', $report->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                        </form>
-                                    </td>
+                                    <td>{{ 'Rp' . number_format($report->payment, 0, ',', '.') }}</td>
+                                    <td>{{ 'Rp' . number_format($report->profit, 0, ',', '.') }}</td>
+                                    <td>{{ $report->created_at }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
