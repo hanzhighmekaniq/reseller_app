@@ -49,6 +49,7 @@
                                 <span
                                     class="font-sans text-sky-800 text-4xl font-bold pr-2 russo-one-regular">SELLER.IN</span>
                             </a>
+<<<<<<< Updated upstream
                             <button class="hover:bg-orange-400 text-left w-full"><a href="#home"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Home</a></button>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="#about"
@@ -57,6 +58,16 @@
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Product</a></button>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="#contact"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Contact</a></button>
+=======
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Beranda</a></button>
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Tentang Kami</a></button>
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Produk</a></button>
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Kontak</a></button>
+>>>>>>> Stashed changes
                             <div class="flex justify-center py-4 items-center">
                             </div>
                             <button class="hover:bg-orange-400 text-left w-full"><a href="/login"
@@ -88,11 +99,19 @@
                     <li class="items-center justify-center rounded-md hover:bg-orange-500 bg-orange-500"><a
                             class="text-base font-semibold text-white" href="/login">Login</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
+<<<<<<< Updated upstream
                             class="text-base font-semibold text-slate-800" href="#home">Home</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
                             class="text-base font-semibold text-slate-800" href="#about">About</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
                             class="text-base font-semibold text-slate-800" href="#product">Product</a></li>
+=======
+                            class="text-base font-semibold text-slate-800" href="#">Beranda</a></li>
+                    <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
+                            class="text-base font-semibold text-slate-800" href="#">Tentang Kami</a></li>
+                    <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
+                            class="text-base font-semibold text-slate-800" href="#">Produk</a></li>
+>>>>>>> Stashed changes
                     <li class="items-center justify-center rounded-md hover:bg-orange-400"><a
                             class="text-base font-semibold text-slate-800" href="#kontak">Kontak</a></li>
                 </ul>

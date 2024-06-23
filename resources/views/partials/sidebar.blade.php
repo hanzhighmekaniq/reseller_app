@@ -1,9 +1,10 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon ">
+            <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo" class="img-fluid"
+                style="max-height: 2rem;">
         </div>
         <div class="sidebar-brand-text mx-3">Seller.in</div>
     </a>
@@ -13,32 +14,31 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" 
-           @if(Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
+        <a class="nav-link"
+            @if (Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
            @elseif(Auth::user()->role == 'bos') href="{{ url('/dashboard/admin') }}"
-           @elseif(Auth::user()->role == 'anggota') href="{{ url('/dashboard/anggota') }}"
-           @endif>
+           @elseif(Auth::user()->role == 'anggota') href="{{ url('/dashboard/anggota') }}" @endif>
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <span>Beranda</span>
         </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-{{-- SIDEBAR PEMILIK --}}
+    {{-- SIDEBAR PEMILIK --}}
     <!-- Menu berdasarkan peran pengguna -->
-    @if(Auth::user()->role == 'pemilik')
+    @if (Auth::user()->role == 'pemilik')
         <!-- Heading -->
         <div class="sidebar-heading">
-            Management
+            Pengelolaan
         </div>
 
         <!-- Nav Item - Admin Management -->
         <li class="nav-item">
             <a class="nav-link" href="{{ url('/admins') }}">
                 <i class="fas fa-fw fa-user-cog"></i>
-                <span>Daftar Koordinator</span>
+                <span>Daftar Admin</span>
             </a>
         </li>
 
@@ -52,7 +52,8 @@
 
         <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
                 <i class="fas fa-fw fa-chart-bar"></i>
                 <span>Penjualan</span>
             </a>
@@ -70,8 +71,8 @@
         <hr class="sidebar-divider">
     @endif
 
-{{-- SIDEBAR ADMIN --}}
-    @if(Auth::user()->role == 'bos')
+    {{-- SIDEBAR ADMIN --}}
+    @if (Auth::user()->role == 'bos')
         <!-- Heading -->
         <div class="sidebar-heading">
             Admin Tools
@@ -122,10 +123,15 @@
         <hr class="sidebar-divider">
     @endif
 
+<<<<<<< Updated upstream
 
 
 {{-- SIDEBAR ANGGOTA --}}
     @if(Auth::user()->role == 'anggota')
+=======
+    {{-- SIDEBAR ANGGOTA --}}
+    @if (Auth::user()->role == 'anggota')
+>>>>>>> Stashed changes
         <!-- Heading -->
         <div class="sidebar-heading">
             User Area
@@ -149,8 +155,8 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
     @endif
-     
-{{-- SIDEBAR SEMUA --}}
+
+    {{-- SIDEBAR SEMUA --}}
     <!-- Nav Item - Profile -->
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/profile') }}">
@@ -163,7 +169,7 @@
     <li class="nav-item">
         <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <i class="fas fa-fw fa-chart-bar"></i>
-            <span>Report</span>
+            <span>Laporan</span>
         </a>
         <ul class="collapse list-unstyled" id="reportSubmenu">
             <li class="nav-item">
@@ -182,20 +188,23 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/topperformance') }}">
             <i class="fas fa-fw fa-star"></i>
-            <span>Top Performance</span>
+            <span>Kinerja Terbaik</span>
         </a>
     </li>
 
     <!-- Nav Item - Logout -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
+            <input type="hidden" name="redirect_to" value="/login">
         </form>
     </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

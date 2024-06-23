@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Dashboard Admin</h1>
+    <h1 class="h3 mb-4 text-gray-800">Beranda Admin</h1>
 
     <div class="row">
         <!-- Total Anggota Card -->
@@ -30,7 +30,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Total Products</div>
+                                Total Produk</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalProducts }}</div>
                         </div>
                         <div class="col-auto">
@@ -48,7 +48,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Total Orders</div>
+                                Total Order</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalOrders }}</div>
                         </div>
                         <div class="col-auto">
@@ -66,7 +66,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Current Month Sales</div>
+                                Penjualan Bulan Ini</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $currentMonthSales }}</div>
                         </div>
                         <div class="col-auto">
