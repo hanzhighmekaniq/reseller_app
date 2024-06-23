@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Tambah Anggota</h1>
+    <h1 class="h3 mb-4 text-gray-800">Tambah Reseller</h1>
 
     <div class="row">
         <div class="col-md-12">

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Data Penjualan Anggota</h1>
+    <h1 class="h3 mb-4 text-gray-800">Data Penjualan Reseller</h1>
 
     @if(session('success'))
         <div class="alert alert-success">
@@ -24,9 +24,9 @@
                                     <th>No</th>
                                     <th>Produk</th>
                                     <th>Produk Yang Dibawa</th>
-                                    <th>Sold</th>
-                                    <th>Return</th>
-                                    <th>Payment</th>
+                                    <th>Terjual</th>
+                                    <th>Pengembalian</th>
+                                    <th>Pembayaran</th>
                                     <th>Profit</th>
                                     <th>Tanggal / Jam</th>
                                 </tr>

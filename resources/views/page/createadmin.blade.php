@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <a href="{{ url('/admins') }}" class="text-decoration-none">
-            <h5  class="fs-6 p-2 fw-semibold"><-Daftar Admin</h1>
+            <h5  class="fs-6 p-2 fw-semibold"><-Daftar Koordinator</h1>
         </a>
 
 
@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Tambah Admin</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Tambah Koordinator</h6>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('admins.store') }}" method="POST">

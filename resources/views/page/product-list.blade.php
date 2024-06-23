@@ -28,7 +28,6 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
-                                <th>Stok</th>
                                 <th>Original Price</th>
                                 <th>Sale Price</th>
                                 <th>Image</th>
@@ -40,7 +39,6 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $product->name }}</td>
-                                    <td>{{ $product->qty }}</td>
                                     <td>Rp{{ number_format($product->original_price, 0, ',', '.') }}</td>
                                     <td>Rp{{ number_format($product->sale_price, 0, ',', '.') }}</td>
                                     <td><img  src="{{ asset('storage/' . $product->image) }}" width="80"></td>

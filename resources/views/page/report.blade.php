@@ -25,8 +25,8 @@
                                 <th>PRODUK</th>
                                 <th>RETURN</th>
                                 <th>SOLD</th>
-                                <th>PAYMENT</th>
-                                <th>PROFIT</th>
+                                <th>SETOR</th>
+                                <th>KEUNTUNGAN</th>
                             </tr>
                         </thead>
                         <tbody>

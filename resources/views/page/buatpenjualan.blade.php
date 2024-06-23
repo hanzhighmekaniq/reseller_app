@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container-fluid">
-        <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Penjualan - Penjualan Admin</h2>
+        <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Penjualan - Penjualan Koordinator</h2>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Daftar Admin</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Daftar Koordinator</h6>
             </div>
             <div class="card-body">
                 <form action="{{ route('orders.store') }}" method="POST" id="orderForm">
@@ -20,13 +20,13 @@
                     </div>
                     <div id="product-list">
                         <div class="form-group product-group m-0">
-                            <label for="product_id">Product</label>
+                            <label for="product_id">Produk</label>
                             <select id="product_id" class="form-control product-select" required>
                                 @foreach ($products as $product)
                                     <option value="{{ $product->id }}">{{ $product->name }}</option>
                                 @endforeach
                             </select>
-                            <label for="quantity">Quantity</label>
+                            <label for="quantity">Jumlah</label>
                             <input type="number" id="quantity" class="form-control quantity-input" required>
                             <button type="button" class="btn btn-primary mt-4" id="addProduct">Masukkan Keranjang</button>
                         </div>
@@ -37,14 +37,14 @@
 
         <div class="card shadow my-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Daftar Admin</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Daftar Koordinator</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="salesListTable">
                         <thead>
                             <tr>
-                                <th>Admin</th>
+                                <th>Koordinator</th>
                                 <th>Produk</th>
                                 <th>Jumlah</th>
                                 <th>Tindakan</th>

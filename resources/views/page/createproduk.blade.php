@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Tambah Admin</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Tambah Produk</h6>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">

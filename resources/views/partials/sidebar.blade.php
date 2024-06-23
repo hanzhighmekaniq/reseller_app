@@ -16,7 +16,7 @@
     <li class="nav-item active">
         <a class="nav-link"
             @if (Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
-           @elseif(Auth::user()->role == 'bos') href="{{ url('/dashboard/admin') }}"
+           @elseif(Auth::user()->role == 'bos') href="{{ url('/dashboard/Koordinator') }}"
            @elseif(Auth::user()->role == 'anggota') href="{{ url('/dashboard/anggota') }}" @endif>
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Beranda</span>
@@ -34,11 +34,18 @@
             Pengelolaan
         </div>
 
-        <!-- Nav Item - Admin Management -->
+        <!-- Nav Item - Koordinator Management -->
         <li class="nav-item">
             <a class="nav-link" href="{{ url('/admins') }}">
                 <i class="fas fa-fw fa-user-cog"></i>
-                <span>Daftar Admin</span>
+                <span>Daftar Koordinator</span>
+            </a>
+        </li>
+        <!-- Nav Item - User Management -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('/anggota') }}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Daftar Reseller</span>
             </a>
         </li>
 
@@ -59,10 +66,10 @@
             </a>
             <ul class="collapse list-unstyled" id="orderSubmenu">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('orders/create') }}">Drop Penjualan</a>
+                    <a class="nav-link" href="{{ url('orders/create') }}">Barang Keluar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('kelolapenjualan') }}">Data Penjualan</a>
+                    <a class="nav-link" href="{{ url('kelolapenjualan') }}">Riwayat Barang Keluar</a>
                 </li>
             </ul>
         </li>
@@ -71,11 +78,11 @@
         <hr class="sidebar-divider">
     @endif
 
-    {{-- SIDEBAR ADMIN --}}
+    {{-- SIDEBAR Koordinator --}}
     @if (Auth::user()->role == 'bos')
         <!-- Heading -->
         <div class="sidebar-heading">
-            Admin Tools
+            Koordinator Tools
         </div>
 
         <!-- Nav Item - User Management -->
@@ -87,36 +94,36 @@
         </li>
         <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenuAdmin" data-toggle="collapse" aria-expanded="false"
+            <a class="nav-link" href="#orderSubmenuKoordinator" data-toggle="collapse" aria-expanded="false"
                 class="dropdown-toggle">
                 <i class="fas fa-fw fa-shopping-cart"></i>
                 <span>Kelola Penjualan</span>
             </a>
-            <ul class="collapse list-unstyled" id="orderSubmenuAdmin">
+            <ul class="collapse list-unstyled" id="orderSubmenuKoordinator">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/datapenjualanadmin') }}">Data Penjualan</a>
+                    <a class="nav-link" href="{{ url('/datapenjualanKoordinator') }}">Data Penjualan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/buatlaporanadmin') }}">Laporkan Penjualan</a>
+                    <a class="nav-link" href="{{ url('/buatlaporanKoordinator') }}">Laporkan Penjualan</a>
                 </li>
             </ul>
         </li>
         <!-- Nav Item - Report Management -->
         <li class="nav-item">
-            <a class="nav-link" href="#reportSubmenuAdmin" data-toggle="collapse" aria-expanded="false"
+            <a class="nav-link" href="#reportSubmenuKoordinator" data-toggle="collapse" aria-expanded="false"
                 class="dropdown-toggle">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Manajemen Laporan</span>
             </a>
-            <ul class="collapse list-unstyled" id="reportSubmenuAdmin">
+            <ul class="collapse list-unstyled" id="reportSubmenuKoordinator">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/buatlaporanadmin') }}">Buat Laporan</a>
+                    <a class="nav-link" href="{{ url('/buatlaporanKoordinator') }}">Buat Laporan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('datapenjualanadmin') }}">Laporan Saya</a>
+                    <a class="nav-link" href="{{ url('datapenjualanKoordinator') }}">Laporan Saya</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('datapenjualananggotaadmin') }}">Laporan Anggota</a>
+                    <a class="nav-link" href="{{ url('datapenjualananggotaKoordinator') }}">Laporan Anggota</a>
                 </li>
             </ul>
         </li>

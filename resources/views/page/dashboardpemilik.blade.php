@@ -12,7 +12,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Total Admin</div>
+                                    Total Koordinator</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalAdmins }}</div>
                             </div>
                             <div class="col-auto">
@@ -48,7 +48,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                    TOTAL PENJUALAN</div>
+                                    Total Penjualan</div>
 
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalOrders }}</div>
                             </div>
@@ -67,7 +67,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    PENDAPATAN BULAN INI</div>
+                                    Pendapatan Bulan Ini</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $currentMonthSales }}</div>
                             </div>
                             <div class="col-auto">

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Data Penjualan Admin</h1>
+    <h1 class="h3 mb-4 text-gray-800">Data Penjualan Koordinator</h1>
 
     @if(session('success'))
         <div class="alert alert-success">
@@ -24,10 +24,10 @@
                                     <th>No</th>
                                     <th>Produk</th>
                                     <th>Produk Yang Dibawa</th>
-                                    <th>Sold</th>
-                                    <th>Return</th>
-                                    <th>Payment</th>
-                                    <th>Profit</th>
+                                    <th>Terjual</th>
+                                    <th>Pengembalian</th>
+                                    <th>Total Setor</th>
+                                    <th>Keuntungan</th>
                                     <th>Tanggal / Jam</th>
                                 </tr>
                             </thead>
@@ -59,9 +59,9 @@
                         <table class="table table-bordered" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Total Sales</th>
-                                    <th>Total Payment</th>
-                                    <th>Total Profit</th>
+                                    <th>Total Barang</th>
+                                    <th>Total Pembayaran</th>
+                                    <th>Total Keuntungan</th>
                                 </tr>
                             </thead>
                             <tbody>

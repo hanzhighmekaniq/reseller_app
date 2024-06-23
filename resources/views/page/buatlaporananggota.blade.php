@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Laporkan Penjualan Anggota</h1>
+    <h1 class="h3 mb-4 text-gray-800">Laporkan Penjualan Reseller</h1>
 
     @if(session('error'))
         <div class="alert alert-danger">

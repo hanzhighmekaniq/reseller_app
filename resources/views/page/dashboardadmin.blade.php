@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Beranda Admin</h1>
+    <h1 class="h3 mb-4 text-gray-800">Beranda Koordinator</h1>
 
     <div class="row">
         <!-- Total Anggota Card -->
@@ -12,7 +12,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Total Anggota</div>
+                                Total Reseller</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalAnggota }}</div>
                         </div>
                         <div class="col-auto">
@@ -48,7 +48,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Total Order</div>
+                                Total Pesanan</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalOrders }}</div>
                         </div>
                         <div class="col-auto">
@@ -85,7 +85,7 @@
             <!-- Project Card Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Projek</h6>
                 </div>
                 <div class="card-body">
                     <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>

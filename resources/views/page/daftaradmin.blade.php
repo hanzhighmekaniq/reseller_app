@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container-fluid">
-    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Daftar Admin</h2>
+    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Daftar Koordinator</h2>
 
 
     <div class="row mb-4">
         <div class="col-md-12">
-            <a href="{{ route('admins.create') }}" class="btn btn-primary mt-2 mx-2">Tambah Admin</a>
+            <a href="{{ route('admins.create') }}" class="btn btn-primary mt-2 mx-2">Tambah Koordinator</a>
         </div>
     </div>
 
@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Daftar Admin</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Daftar Koordinator</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

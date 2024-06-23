@@ -1,4 +1,5 @@
 {{-- TAILWIND --}}
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
@@ -17,8 +18,8 @@
 {{-- TAILWIND --}}
 
 
-<div class=" fixed top-0 left-0 right-0 mx-auto bg-gray-100 w-full m-auto z-50 ">
-    <div class=" w-full h-full ">
+<div class="top-0 shadow-sm mx-auto sticky bg-gray-100 bg-opacity-80 w-full m-auto z-50 ">
+    <div class=" w-full h-full  ">
         <div class="flex items-center justify-between md:hidden">
             <div class="justify-start">
                 <div class="drawer">
@@ -50,14 +51,14 @@
                                     class="font-sans text-sky-800 text-4xl font-bold pr-2 russo-one-regular">SELLER.IN</span>
                             </a>
 
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#home"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Beranda</a></button>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#tentangkami"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Tentang
                                     Kami</a></button>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#produk"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Produk</a></button>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="#"
+                            <button class="hover:bg-orange-400 text-left w-full"><a href="#kontak"
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Kontak</a></button>
                             <div class="flex justify-center py-4 items-center">
                             </div>
@@ -90,11 +91,11 @@
                     <li class="items-center justify-center rounded-md hover:bg-orange-500 bg-orange-500"><a
                             class="text-base font-semibold text-white" href="/login">Login</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#">Beranda</a></li>
+                            class="text-base font-semibold text-slate-800" href="#home">Beranda</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#">Tentang Kami</a></li>
+                            class="text-base font-semibold text-slate-800" href="#tentangkami">Tentang Kami</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#">Produk</a></li>
+                            class="text-base font-semibold text-slate-800" href="#produk">Produk</a></li>
                     <li class="items-center justify-center rounded-md hover:bg-orange-400"><a
                             class="text-base font-semibold text-slate-800" href="#kontak">Kontak</a></li>
                 </ul>

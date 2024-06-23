@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-slate-200" lang="en">
+<html class="bg-slate-200 scroll-smooth" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -16,10 +16,10 @@
 
     {{-- BODY --}}
     <div class="w-full h-full">
-        <div
-            class="pt-16  text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 xl:grid-cols-5 lg:gap-10 xl:gap-2 lg:pt-18 2xl:grid-cols-7">
-            <div class="m-auto xl:col-span-2 2xl:col-span-3">
-                <div class="flex justify-start items-center space-x-2 p-4 md:flex-col md:items-start">
+        <div id="home"
+            class="pt-16 text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 xl:grid-cols-4 lg:gap-10 xl:gap-2 lg:pt-18 ">
+            <div class="m-auto px-8 xl:col-span-2 ">
+                <div class="flex justify-center m-auto items-center space-x-2 p-4 md:flex-col md:items-start md:ml-4">
                     <img class="h-24 ml-4 md:h-28 lg:h-44 xl:h-56 2xl:h-72 md:mb-4 lg:mb-6 xl:mb-8 2xl:mb-10 "
                         src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="">
                     <p class="text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl  poppins-extrabold-italic text-sky-800">
@@ -32,7 +32,7 @@
                     <p class="w-auto h-auto text-white">DAFTAR</p>
                 </a>
             </div>
-            <div class="rounded-xl xl:col-span-3 2xl:col-span-4">
+            <div class="rounded-xl xl:col-span-2 ">
                 <img src="{{ asset('landing-page/img/Hp.png') }}" alt="TahuPentol"
                     class=" w-auto p-4 m-auto h-96 rounded-3xl md:h-96 lg:h-[500px] xl:h-[650px] 2xl:h-[800px] sm:h-full ">
             </div>
@@ -42,7 +42,7 @@
 
 
 
-        <div class="md:grid grid md:grid-cols-1 2xl:grid-cols-7">
+        <div id="tentangkami" class="mt-16 md:grid grid md:grid-cols-1 2xl:grid-cols-7">
             <div class="rounded-xl 2xl:col-span-5 m-auto">
                 <img src="{{ asset('landing-page/img/piscok.jpg') }}" alt="TahuPentol"
                     class=" w-full m-auto rounded-3xl object-cover p-4 2xl:h-[800px] h-full">
@@ -61,7 +61,7 @@
             </div>
 
         </div>
-        <div class="h-auto w-full bg-slate-200">
+        <div id="produk" class="h-auto w-full bg-slate-200">
             <p class="boogaloo-regular text-sky-800 text-6xl my-6 text-center">PRODUCT</p>
             <div class="px-12 py6 w-full h-auto m-auto justify-center items-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -193,7 +193,8 @@
         <footer class="bg-[#1A2434] text-white">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div class="md:flex md:justify-between">
-                    <div class="mb-10 md:mb-0"><a class="flex items-center gap-x-3" href="/"> <img src="" alt=""><span
+                    <div class="mb-10 md:mb-0"><a class="flex items-center gap-x-3" href="/"> <img
+                                src="" alt=""><span
                                 class="self-center text-2xl font-semibold whitespace-nowrap">SELLER.IN</span></a>
                         <p class="text-gray-400 mt-5">SELLER.IN merupakan website resseler yang dapat diakses
                             melalui internet.</p>
@@ -203,7 +204,8 @@
                             <h2 class="mb-6 text-lg font-semibold">Halaman</h2>
                             <ul class="text-gray-400  font-medium">
                                 <li class="mb-3"><a class="hover:text-gray-300" href="/">Beranda</a></li>
-                                <li class="mb-3"><a class="hover:text-gray-300" href="/">Tentang Kami</a></li>
+                                <li class="mb-3"><a class="hover:text-gray-300" href="/">Tentang Kami</a>
+                                </li>
                                 <li class="mb-3"><a class="hover:text-gray-300" href="/">Produk</a></li>
                                 <li class="mb-3"><a class="hover:text-gray-300" href="/">Kontak</a></li>
                             </ul>
