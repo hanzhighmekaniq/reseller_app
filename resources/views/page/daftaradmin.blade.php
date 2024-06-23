@@ -24,6 +24,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>Area</th>
                                     <th>Email</th>
                                     <th>No WA</th>
                                     <th>Aksi</th>
@@ -34,6 +35,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $admin->name }}</td>
+                                    <td>{{ $admin->area }}</td>
                                     <td>{{ $admin->email }}</td>
                                     <td>{{ $admin->no_wa }}</td>
                                     <td>

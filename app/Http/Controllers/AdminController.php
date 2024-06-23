@@ -23,6 +23,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'area' => 'required|string|max:50',
             'email' => 'required|string|email|max:255|unique:users',
             'no_wa' => 'required|string|max:255',
             'password' => 'required|string|min:8|confirmed',
@@ -30,6 +31,7 @@ class AdminController extends Controller
 
         User::create([
             'name' => $request->name,
+            'area' => $request->area,
             'email' => $request->email,
             'no_wa' => $request->no_wa,
             'password' => Hash::make($request->password),
@@ -49,6 +51,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'area' => 'required|string|max:50',
             'email' => 'required|string|email|max:255|unique:users,email,' . $admin->id,
             'no_wa' => 'required|string|max:255',
             'password' => 'nullable|string|min:8|confirmed',
@@ -56,6 +59,7 @@ class AdminController extends Controller
 
         $admin->update([
             'name' => $request->name,
+            'area' => $request->area,
             'email' => $request->email,
             'no_wa' => $request->no_wa,
         ]);

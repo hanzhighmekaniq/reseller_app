@@ -18,7 +18,7 @@
 {{-- TAILWIND --}}
 
 
-<div class="top-0 shadow-sm mx-auto sticky bg-gray-100 bg-opacity-80 w-full m-auto z-50 ">
+<div class="top-0 shadow-sm mx-auto sticky bg-gray-100 bg-opacity-80  w-full m-auto z-50 ">
     <div class=" w-full h-full  ">
         <div class="flex items-center justify-between md:hidden">
             <div class="justify-start">

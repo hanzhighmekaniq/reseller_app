@@ -17,7 +17,7 @@
     {{-- BODY --}}
     <div class="w-full h-full">
         <div id="home"
-            class="pt-16 text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 xl:grid-cols-4 lg:gap-10 xl:gap-2 lg:pt-18 ">
+            class=" text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 xl:grid-cols-4 lg:gap-10 xl:gap-2 lg:pt-18 ">
             <div class="m-auto px-8 xl:col-span-2 ">
                 <div class="flex justify-center m-auto items-center space-x-2 p-4 md:flex-col md:items-start md:ml-4">
                     <img class="h-24 ml-4 md:h-28 lg:h-44 xl:h-56 2xl:h-72 md:mb-4 lg:mb-6 xl:mb-8 2xl:mb-10 "
@@ -34,7 +34,7 @@
             </div>
             <div class="rounded-xl xl:col-span-2 ">
                 <img src="{{ asset('landing-page/img/Hp.png') }}" alt="TahuPentol"
-                    class=" w-auto p-4 m-auto h-96 rounded-3xl md:h-96 lg:h-[500px] xl:h-[650px] 2xl:h-[800px] sm:h-full ">
+                    class=" w-auto p-8 m-auto h-96 rounded-3xl md:h-96 lg:h-[500px] xl:h-[650px] 2xl:h-[800px] sm:h-full ">
             </div>
         </div>
 
