@@ -43,7 +43,7 @@
         </li>
         <!-- Nav Item - User Management -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('/anggota') }}">
+            <a class="nav-link" href="{{ url('/anggota-admin') }}">
                 <i class="fas fa-fw fa-users"></i>
                 <span>Daftar Reseller</span>
             </a>

@@ -39,4 +39,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Report::class, 'reseller1_id');
     }
+
+    public function bos()
+    {
+        return $this->belongsTo(User::class, 'bos_id');
+    }
 }

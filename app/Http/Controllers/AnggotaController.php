@@ -9,9 +9,26 @@ use Illuminate\Support\Facades\Auth;
 
 class AnggotaController extends Controller
 {
+    public function indexAdmin_Anggota()
+    {
+        $user = Auth::user();
+        if ($user->role == 'pemilik') {
+            $anggota = User::where('role', 'anggota')->with('bos')->get()->sortBy(function ($anggota) {
+                return $anggota->bos->name . ' ' . $anggota->name;
+            });
+        } else {
+            $adminId = $user->id;
+            $anggota = User::where('role', 'anggota')
+                ->where('bos_id', $adminId)
+                ->orderBy('name', 'asc')
+                ->get();
+        }
+        return view('page.daftaranggotadanadmin', compact('anggota'));
+    }
+
     public function index()
     {
-        $adminId = Auth::user()->id; // Mendapatkan ID admin yang sedang login
+        $adminId = Auth::user()->id; 
         $anggota = User::where('role', 'anggota')->where('bos_id', $adminId)->get();
         return view('page.daftaranggota', compact('anggota'));
     }

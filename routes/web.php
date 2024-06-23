@@ -22,6 +22,7 @@ Route::get('/', function () {
 // Rute untuk pemilik
 Route::middleware(['auth', 'role:pemilik'])->group(function () {
     Route::resource('admins', AdminController::class);
+    Route::get('/anggota-admin', [AnggotaController::class, 'indexAdmin_Anggota'])->name('anggota-admin.index');
     Route::get('/orders/report', [OrderController::class, 'report'])->name('orders.report');
     Route::get('/orders/today', [OrderController::class, 'index'])->name('orders.today');
     Route::get('/kelolapenjualan', [OrderController::class, 'index'])->name('kelolapenjualan');
