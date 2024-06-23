@@ -62,85 +62,90 @@
 @endsection
 
 @section('scripts')
-    <script>
-        document.getElementById('addProduct').addEventListener('click', function() {
-            var productSelect = document.getElementById('product_id');
-            var quantityInput = document.getElementById('quantity');
-            var coordinatorSelect = document.getElementById('bos_id');
+<script>
+    document.getElementById('addProduct').addEventListener('click', function() {
+        var productSelect = document.getElementById('product_id');
+        var quantityInput = document.getElementById('quantity');
+        var coordinatorSelect = document.getElementById('bos_id');
 
-            var productId = productSelect.value;
-            var productName = productSelect.options[productSelect.selectedIndex].text;
-            var quantity = parseInt(quantityInput.value);
-            var coordinatorId = coordinatorSelect.value;
-            var coordinatorName = coordinatorSelect.options[coordinatorSelect.selectedIndex].text;
+        var productId = productSelect.value;
+        var productName = productSelect.options[productSelect.selectedIndex].text;
+        var quantity = parseInt(quantityInput.value);
+        var coordinatorId = coordinatorSelect.value;
+        var coordinatorName = coordinatorSelect.options[coordinatorSelect.selectedIndex].text;
 
-            if (productId && quantity > 0) {
-                var table = document.getElementById('salesListTable').getElementsByTagName('tbody')[0];
+        if (productId && quantity > 0) {
+            var table = document.getElementById('salesListTable').getElementsByTagName('tbody')[0];
 
-                // Cari apakah ada baris dengan produk yang sama untuk koordinator yang sama
-                var existingRow = Array.from(table.rows).find(row => {
-                    var rowProductId = row.dataset.productId;
-                    var rowCoordinatorId = row.dataset.bosId;
-                    return rowProductId === productId && rowCoordinatorId === coordinatorId;
-                });
+            // Check if there's an existing row with the same product and coordinator
+            var existingRow = Array.from(table.rows).find(row => {
+                var rowProductId = row.dataset.productId;
+                var rowCoordinatorId = row.dataset.bosId;
+                return rowProductId === productId && rowCoordinatorId === coordinatorId;
+            });
 
-                if (existingRow) {
-                    var existingQuantity = parseInt(existingRow.cells[2].textContent);
-                    var newQuantity = existingQuantity + quantity;
-                    existingRow.cells[2].textContent = newQuantity;
+            if (existingRow) {
+                var existingQuantity = parseInt(existingRow.cells[2].textContent);
+                var newQuantity = existingQuantity + quantity;
+                existingRow.cells[2].textContent = newQuantity;
 
-                    // Update hidden input values
-                    var existingInput = document.querySelector(
-                        `input[name="quantity[]"][data-product-id="${productId}"][data-bos-id="${coordinatorId}"]`
-                    );
-                    existingInput.value = newQuantity;
-                } else {
-                    var newRow = table.insertRow();
-                    newRow.setAttribute('data-product-id', productId);
-                    newRow.setAttribute('data-bos-id', coordinatorId);
-
-                    var coordinatorCell = newRow.insertCell(0);
-                    var productCell = newRow.insertCell(1);
-                    var quantityCell = newRow.insertCell(2);
-                    var actionCell = newRow.insertCell(3);
-
-                    coordinatorCell.textContent = coordinatorName;
-                    productCell.textContent = productName;
-                    quantityCell.textContent = quantity;
-
-                    // Add hidden inputs to the form for submission
-                    var hiddenProductId = document.createElement('input');
-                    hiddenProductId.type = 'hidden';
-                    hiddenProductId.name = 'product_id[]';
-                    hiddenProductId.value = productId;
-                    hiddenProductId.dataset.productId = productId;
-                    hiddenProductId.dataset.bosId = coordinatorId;
-                    orderForm.appendChild(hiddenProductId);
-
-                    var hiddenQuantity = document.createElement('input');
-                    hiddenQuantity.type = 'hidden';
-                    hiddenQuantity.name = 'quantity[]';
-                    hiddenQuantity.value = quantity;
-                    hiddenQuantity.dataset.productId = productId;
-                    hiddenQuantity.dataset.bosId = coordinatorId;
-                    orderForm.appendChild(hiddenQuantity);
-
-                    // Add event listener to remove button
-                    actionCell.innerHTML =
-                        '<button type="button" class="btn btn-danger remove-product">Hapus</button>';
-                    actionCell.querySelector('.remove-product').addEventListener('click', function() {
-                        newRow.remove();
-                        hiddenProductId.remove();
-                        hiddenQuantity.remove();
-                    });
-                }
-
-                // Clear the product select and quantity input for new entries
-                productSelect.value = '';
-                quantityInput.value = '';
+                // Update hidden input values
+                var existingInput = document.querySelector(
+                    `input[name="quantity[]"][data-product-id="${productId}"][data-bos-id="${coordinatorId}"]`
+                );
+                existingInput.value = newQuantity;
             } else {
-                alert('Harap masukkan jumlah yang valid.');
+                var newRow = table.insertRow();
+                newRow.setAttribute('data-product-id', productId);
+                newRow.setAttribute('data-bos-id', coordinatorId);
+
+                var coordinatorCell = newRow.insertCell(0);
+                var productCell = newRow.insertCell(1);
+                var quantityCell = newRow.insertCell(2);
+                var actionCell = newRow.insertCell(3);
+
+                coordinatorCell.textContent = coordinatorName;
+                productCell.textContent = productName;
+                quantityCell.textContent = quantity;
+
+                // Add hidden inputs to the form for submission
+                var hiddenProductId = document.createElement('input');
+                hiddenProductId.type = 'hidden';
+                hiddenProductId.name = 'product_id[]';
+                hiddenProductId.value = productId;
+                hiddenProductId.dataset.productId = productId;
+                hiddenProductId.dataset.bosId = coordinatorId;
+                orderForm.appendChild(hiddenProductId);
+
+                var hiddenQuantity = document.createElement('input');
+                hiddenQuantity.type = 'hidden';
+                hiddenQuantity.name = 'quantity[]';
+                hiddenQuantity.value = quantity;
+                hiddenQuantity.dataset.productId = productId;
+                hiddenQuantity.dataset.bosId = coordinatorId;
+                orderForm.appendChild(hiddenQuantity);
+
+                // Add event listener to remove button
+                actionCell.innerHTML =
+                    '<button type="button" class="btn btn-danger remove-product">Hapus</button>';
+                actionCell.querySelector('.remove-product').addEventListener('click', function() {
+                    newRow.remove();
+                    hiddenProductId.remove();
+                    hiddenQuantity.remove();
+                });
             }
-        });
-    </script>
+
+            // Clear the product select and quantity input for new entries
+            productSelect.value = '';
+            quantityInput.value = '';
+        } else {
+            alert('Harap masukkan jumlah yang valid.');
+        }
+    });
+
+    document.getElementById('submitOrder').addEventListener('click', function() {
+        document.getElementById('orderForm').submit();
+    });
+</script>
 @endsection
+
