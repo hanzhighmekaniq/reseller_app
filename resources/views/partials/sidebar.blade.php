@@ -85,24 +85,26 @@
                 <span>Manajemen Anggota</span>
             </a>
         </li>
-            <!-- Nav Item - Kelola Penjualan -->
-            <li class="nav-item">
-                <a class="nav-link" href="#orderSubmenuAdmin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-fw fa-shopping-cart"></i>
-                    <span>Kelola Penjualan</span>
-                </a>
-                <ul class="collapse list-unstyled" id="orderSubmenuAdmin">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/datapenjualanadmin') }}">Data Penjualan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/buatlaporanadmin') }}">Laporkan Penjualan</a>
-                    </li>
-                </ul>
-            </li>
+        <!-- Nav Item - Kelola Penjualan -->
+        <li class="nav-item">
+            <a class="nav-link" href="#orderSubmenuAdmin" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
+                <i class="fas fa-fw fa-shopping-cart"></i>
+                <span>Kelola Penjualan</span>
+            </a>
+            <ul class="collapse list-unstyled" id="orderSubmenuAdmin">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/datapenjualanadmin') }}">Data Penjualan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/buatlaporanadmin') }}">Laporkan Penjualan</a>
+                </li>
+            </ul>
+        </li>
         <!-- Nav Item - Report Management -->
         <li class="nav-item">
-            <a class="nav-link" href="#reportSubmenuAdmin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#reportSubmenuAdmin" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Manajemen Laporan</span>
             </a>
@@ -123,15 +125,9 @@
         <hr class="sidebar-divider">
     @endif
 
-<<<<<<< Updated upstream
 
-
-{{-- SIDEBAR ANGGOTA --}}
-    @if(Auth::user()->role == 'anggota')
-=======
     {{-- SIDEBAR ANGGOTA --}}
     @if (Auth::user()->role == 'anggota')
->>>>>>> Stashed changes
         <!-- Heading -->
         <div class="sidebar-heading">
             User Area
@@ -139,7 +135,8 @@
 
         <!-- Nav Item - Orders -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenuAnggota" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenuAnggota" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
                 <i class="fas fa-fw fa-shopping-cart"></i>
                 <span>Kelola Penjualan</span>
             </a>
@@ -167,7 +164,8 @@
 
     <!-- Nav Item - Report -->
     <li class="nav-item">
-        <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false"
+            class="dropdown-toggle">
             <i class="fas fa-fw fa-chart-bar"></i>
             <span>Laporan</span>
         </a>
