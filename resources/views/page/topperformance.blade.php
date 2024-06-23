@@ -14,7 +14,9 @@
                                 <tr>
                                     <th>Rank</th>
                                     <th>Nama</th>
+                                    <th>Total Barang</th>
                                     <th>Total Penjualan</th>
+                                    <th>Performa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,6 +28,8 @@
                                         <td>{{ $index + 1 }}</td>
                                         <td>{{ $user ? $user->name : 'User tidak ditemukan' }}</td>
                                         <td>{{ $performance->total_sales }}</td>
+                                        <td>{{ $performance->total_sold }}</td>
+                                        <td>{{ number_format($performance->performance, 2) }}%</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -37,7 +41,9 @@
                                 <tr>
                                     <th>Rank</th>
                                     <th>Nama</th>
+                                    <th>Total Barang</th>
                                     <th>Total Penjualan</th>
+                                    <th>Performa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,6 +55,8 @@
                                         <td>{{ $index + 1 }}</td>
                                         <td>{{ $user ? $user->name : 'User tidak ditemukan' }}</td>
                                         <td>{{ $performance->total_sales }}</td>
+                                        <td>{{ $performance->total_sold }}</td>
+                                        <td>{{ number_format($performance->performance, 2) }}%</td>
                                     </tr>
                                 @endforeach
                             </tbody>
