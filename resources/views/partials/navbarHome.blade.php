@@ -18,7 +18,7 @@
 {{-- TAILWIND --}}
 
 
-<div class="top-0 shadow-sm mx-auto sticky bg-gray-100 bg-opacity-80  w-full m-auto z-50 ">
+<div class="top-0  mx-auto sticky bg-white bg-opacity-0  w-full m-auto z-50 ">
     <div class=" w-full h-full  ">
         <div class="flex items-center justify-between md:hidden">
             <div class="justify-start">
@@ -62,8 +62,10 @@
                                     class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Kontak</a></button>
                             <div class="flex justify-center py-4 items-center">
                             </div>
-                            <button class="hover:bg-orange-400 text-left w-full"><a href="/login"
-                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Login</a></button>
+                            <a class="hover:bg-orange-400 text-left w-full"><a href="/login"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Login</a></a>
+                            <a class="hover:bg-orange-400 text-left w-full"><a href="/login"
+                                    class="block w-full px-6 py-2 text-slate-800 font-semibold text-lg">Daftar</a></a>
                         </div>
                     </div>
                 </div>
@@ -77,8 +79,10 @@
                 </a>
             </div>
         </div>
-        <div class="items-center justify-between hidden md:flex xl:w-[70%] lg:m-auto">
-            <div class="justify-start">
+
+        {{-- TAMPILAN BESAR --}}
+        <div class=" items-center justify-between hidden md:flex xl:w-[70%] lg:m-auto">
+            <div class="flex space-x-4 items-center">
                 <a href="#" class="flex items-center justify-center bg-transparent border-none px-2">
                     <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo"
                         class="p-2 2xl:h-18 xl:h-16 lg:h-16 md:h-14 sm:h-12 h-12">
@@ -86,21 +90,39 @@
                         class="font-sans text-[#2284BF] lg:text-xl text-base sm:text-base font-bold pr-2 russo-one-regular">SELLER.IN</span>
                 </a>
             </div>
-            <div class="justify-end">
-                <ul class="menu menu-horizontal space-x-2">
-                    <li class="items-center justify-center rounded-md hover:bg-orange-500 bg-orange-500"><a
-                            class="text-base font-semibold text-white" href="/login">Login</a></li>
-                    <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#home">Beranda</a></li>
-                    <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#tentangkami">Tentang Kami</a></li>
-                    <li class="items-center justify-center rounded-md hover:bg-orange-500"><a
-                            class="text-base font-semibold text-slate-800" href="#produk">Produk</a></li>
-                    <li class="items-center justify-center rounded-md hover:bg-orange-400"><a
-                            class="text-base font-semibold text-slate-800" href="#kontak">Kontak</a></li>
+
+            <div class="flex space-x-4 items-center">
+                <ul class="flex space-x-4">
+                    <li class="rounded-md hover:bg-orange-500">
+                        <a class="block px-4 py-2 text-base font-semibold hover:text-white text-slate-800  "
+                            href="#home">Beranda</a>
+                    </li>
+                    <li class="rounded-md hover:bg-orange-500">
+                        <a class="block px-4 py-2 text-base font-semibold hover:text-white text-slate-800 "
+                            href="#tentangkami">Tentang
+                            Kami</a>
+                    </li>
+                    <li class="rounded-md hover:bg-orange-500">
+                        <a class="block px-4 py-2 text-base font-semibold hover:text-white text-slate-800 "
+                            href="#produk">Produk</a>
+                    </li>
+                    <li class="rounded-md hover:bg-orange-500">
+                        <a class="block px-4 py-2 text-base font-semibold hover:text-white text-slate-800 "
+                            href="#kontak">Kontak</a>
+                    </li>
                 </ul>
             </div>
-        </div>
+            <div class="flex space-x-4 items-center">
+                <a href="/login"
+                    class="border-2 border-orange-500 bg-orange-500 text-white px-6 py-2 rounded-md text-base font-semibold transition duration-300 ease-in-out">
+                    Masuk
+                </a>
+                <a href="/register"
+                    class="border-2 border-orange-500 text-orange-500 px-6 py-2 rounded-md text-base font-semibold transition duration-300 ease-in-out">
+                    Daftar
+                </a>
+            </div>
 
+        </div>
     </div>
 </div>
