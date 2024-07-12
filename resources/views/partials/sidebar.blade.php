@@ -3,8 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon ">
-            <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo" class="img-fluid"
-                style="max-height: 2rem;">
+            <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo" class="img-fluid" style="max-height: 2rem;">
         </div>
         <div class="sidebar-brand-text mx-3">Seller.in</div>
     </a>
@@ -15,7 +14,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link"
-            @if (Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
+           @if (Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
            @elseif(Auth::user()->role == 'bos') href="{{ url('/dashboard/Koordinator') }}"
            @elseif(Auth::user()->role == 'anggota') href="{{ url('/dashboard/anggota') }}" @endif>
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -27,12 +26,8 @@
     <hr class="sidebar-divider">
 
     {{-- SIDEBAR PEMILIK --}}
-    <!-- Menu berdasarkan peran pengguna -->
     @if (Auth::user()->role == 'pemilik')
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Pengelolaan
-        </div>
+        <div class="sidebar-heading">Pengelolaan</div>
 
         <!-- Nav Item - Koordinator Management -->
         <li class="nav-item">
@@ -59,31 +54,26 @@
 
         <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false"
-                class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-fw fa-chart-bar"></i>
                 <span>Penjualan</span>
             </a>
             <ul class="collapse list-unstyled" id="orderSubmenu">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('orders/create') }}">Barang Keluar</a>
+                    <a class="nav-link" href="{{ route('orders.create') }}">Barang Keluar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('kelolapenjualan') }}">Riwayat Barang Keluar</a>
+                    <a class="nav-link" href="{{ route('kelolapenjualan') }}">Riwayat Barang Keluar</a>
                 </li>
             </ul>
         </li>
 
-        <!-- Divider -->
         <hr class="sidebar-divider">
     @endif
 
     {{-- SIDEBAR Koordinator --}}
     @if (Auth::user()->role == 'bos')
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Koordinator Tools
-        </div>
+        <div class="sidebar-heading">Koordinator Tools</div>
 
         <!-- Nav Item - User Management -->
         <li class="nav-item">
@@ -92,26 +82,26 @@
                 <span>Manajemen Anggota</span>
             </a>
         </li>
+
         <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenuKoordinator" data-toggle="collapse" aria-expanded="false"
-                class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenuKoordinator" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-fw fa-shopping-cart"></i>
                 <span>Kelola Penjualan</span>
             </a>
             <ul class="collapse list-unstyled" id="orderSubmenuKoordinator">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/datapenjualanKoordinator') }}">Data Penjualan</a>
+                    <a class="nav-link" href="{{ route('orders.createAdmin') }}">Barang Keluar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/buatlaporanKoordinator') }}">Laporkan Penjualan</a>
+                    <a class="nav-link" href="{{ route('kelolapenjualanadmin') }}">Riwayat Barang Keluar</a>
                 </li>
             </ul>
         </li>
+
         <!-- Nav Item - Report Management -->
         <li class="nav-item">
-            <a class="nav-link" href="#reportSubmenuKoordinator" data-toggle="collapse" aria-expanded="false"
-                class="dropdown-toggle">
+            <a class="nav-link" href="#reportSubmenuKoordinator" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Manajemen Laporan</span>
             </a>
@@ -128,22 +118,16 @@
             </ul>
         </li>
 
-        <!-- Divider -->
         <hr class="sidebar-divider">
     @endif
 
-
     {{-- SIDEBAR ANGGOTA --}}
     @if (Auth::user()->role == 'anggota')
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            User Area
-        </div>
+        <div class="sidebar-heading">User Area</div>
 
         <!-- Nav Item - Orders -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenuAnggota" data-toggle="collapse" aria-expanded="false"
-                class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenuAnggota" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-fw fa-shopping-cart"></i>
                 <span>Kelola Penjualan</span>
             </a>
@@ -156,12 +140,10 @@
                 </li>
             </ul>
         </li>
-        <!-- Divider -->
         <hr class="sidebar-divider">
     @endif
 
     {{-- SIDEBAR SEMUA --}}
-    <!-- Nav Item - Profile -->
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/profile') }}">
             <i class="fas fa-fw fa-user"></i>
@@ -171,8 +153,7 @@
 
     <!-- Nav Item - Report -->
     <li class="nav-item">
-        <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
+        <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <i class="fas fa-fw fa-chart-bar"></i>
             <span>Laporan</span>
         </a>
@@ -189,7 +170,6 @@
         </ul>
     </li>
 
-    <!-- Nav Item - Top Performance -->
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/topperformance') }}">
             <i class="fas fa-fw fa-star"></i>
@@ -197,10 +177,9 @@
         </a>
     </li>
 
-    <!-- Nav Item - Logout -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('logout') }}"
-            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
         </a>
@@ -210,11 +189,8 @@
         </form>
     </li>
 
-
-    <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>

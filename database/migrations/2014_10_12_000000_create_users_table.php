@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('role', ['pemilik', 'bos', 'anggota'])->default('anggota');
             $table->unsignedBigInteger('bos_id')->nullable(); // Bos ID untuk anggota
+            $table->string('area')->nullable();
             $table->foreign('bos_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('foto');
             $table->rememberToken();

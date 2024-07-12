@@ -25,9 +25,10 @@ Route::middleware(['auth', 'role:pemilik'])->group(function () {
     Route::get('/anggota-admin', [AnggotaController::class, 'indexAdmin_Anggota'])->name('anggota-admin.index');
     Route::get('/orders/report', [OrderController::class, 'report'])->name('orders.report');
     Route::get('/orders/today', [OrderController::class, 'index'])->name('orders.today');
-    Route::get('/kelolapenjualan', [OrderController::class, 'index'])->name('kelolapenjualan');
+    Route::get('/orders/create', [OrderController::class, 'createOwner'])->name('orders.create');
+    Route::post('/orders/storeOwner', [OrderController::class, 'storeOwner'])->name('orders.storeOwner'); 
+    Route::get('/kelolapenjualan', [OrderController::class, 'indexOwner'])->name('kelolapenjualan');
 });
-
 
 // Rute untuk admin
 Route::middleware(['auth', 'role:bos'])->group(function () {
@@ -36,6 +37,9 @@ Route::middleware(['auth', 'role:bos'])->group(function () {
     Route::post('/reports/admin', [ReportController::class, 'storeAdmin'])->name('reports.storeAdmin');
     Route::get('/datapenjualanadmin', [ReportController::class, 'indexAdmin'])->name('reports.indexAdmin');
     Route::get('/datapenjualananggotaadmin', [ReportController::class, 'indexReseller'])->name('reports.indexReseller');
+    Route::get('/orders/create-admin', [OrderController::class, 'createAdmin'])->name('orders.createAdmin');
+    Route::post('/orders/storeAdmin', [OrderController::class, 'storeAdmin'])->name('orders.storeAdmin'); 
+    Route::get('/kelolapenjualanadmin', [OrderController::class, 'indexAdmin'])->name('kelolapenjualanadmin');
 });
 
 // Rute untuk anggota
@@ -47,15 +51,12 @@ Route::middleware(['auth', 'role:anggota'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('products', ProductController::class);
-    Route::resource('orders', OrderController::class)->only(['index', 'create', 'store']);
+    Route::resource('orders', OrderController::class)->only(['index', 'store']);
     Route::resource('reports', ReportController::class);
     Route::resource('users', UserController::class);
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
-
-
-
 
     Route::post('approve-member/{id}', [UserController::class, 'approveMember'])->name('approve-member');
 

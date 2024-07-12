@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Riwayat Drop Barang</h1>
-    {{-- <a href="{{ route('orders.createOwner') }}" class="btn btn-primary mb-3">Buat Penjualan</a> --}}
+    {{-- <a href="{{ route('orders.createAdmin') }}" class="btn btn-primary mb-3">Buat Penjualan</a> --}}
     <table class="table">
         <thead>
             <tr>

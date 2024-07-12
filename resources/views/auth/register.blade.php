@@ -16,7 +16,7 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <input id="name" type="text" class="form-control @error('nama') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
 
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -36,14 +36,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="bos_id">Pilih Nama Koordinator</label>
+                                    <label for="bos_id">Pilih Koordinator</label>
                                     <select name="bos_id" id="bos_id" class="form-control" required>
                                         @foreach($bosses as $bos)
-                                            <option value="{{ $bos->id }}">{{ $bos->name }}</option>
+                                            <option value="{{ $bos->id }}">{{ $bos->name }} - {{ $bos->area }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-
 
                                 <div class="form-group">
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
@@ -54,7 +53,6 @@
                                     </span>
                                     @enderror
                                 </div>
-
 
                                 <div class="form-group">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
