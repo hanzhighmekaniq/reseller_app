@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-slate-200 scroll-smooth" lang="en">
+<html class="bg-white scroll-smooth" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,63 +9,103 @@
     <link href="{{ asset('css/animasi.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-slate-200">
 
-    {{-- NAVBAR --}}
-    @include('partials.navbarHome')
+{{-- NAVBAR --}}
+@include('partials.navbarHome')
 
+
+
+
+<body id="home" class="bg-white">
     {{-- BODY --}}
     <div class="w-full h-full">
-        <div id="home"
-            class=" text-black font-semibold  lg:m-auto md:grid md:grid-cols-2 xl:grid-cols-4 lg:gap-10 xl:gap-2 lg:pt-18 ">
-            <div class="m-auto px-8 xl:col-span-2 ">
-                <div class="flex justify-center m-auto items-center space-x-2 p-4 md:flex-col md:items-start md:ml-4">
-                    <img class="h-24 ml-4 md:h-28 lg:h-44 xl:h-56 2xl:h-72 md:mb-4 lg:mb-6 xl:mb-8 2xl:mb-10 "
-                        src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="">
-                    <p class="text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl  poppins-extrabold-italic text-sky-800">
-                        SELLER.IN</p>
+        <div
+            class="pb-14 text-black font-semibold flex flex-col-reverse lg:m-auto md:grid md:grid-cols-2 lg:gap-10 xl:gap-2 lg:pt-18 ">
+            <div class="rounded-xl m-auto flex justify-center sm:flex sm:justify-center md:justify-center">
+                <img src="{{ asset('landing-page/img/jajanbiru.png') }}" alt="TahuPentol"
+                    class="h-auto flex justify-center sm:w-[600px] md:w-[500px] lg:w-[600px] xl:w-[650px] 2xl:w-[850px]">
+            </div>
+            <div class="m-auto px-8 lg:px-10 xl:pl-10 lg:pb-16 xl:pb-20 2xl:pr-28 sm:py-8 ">
+                <div class="flex justify-end pb-4 items-center md:grid md:grid-cols-1 space-x-2 md:">
+                    <div class="md:flex justify-end md:pb-4 lg:pb-6">
+                        <img class="h-24 md:h-36 lg:h-48 xl:h-56 2xl:h-64 "
+                            src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="">
+                    </div>
+                    <div class="md:flex justify-end">
+                        <p class="text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl poppins-extrabold-italic text-sky-800">
+                            SELLER.IN</p>
+                    </div>
                 </div>
-                <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-sans  px-4 2xl:pb-4">Tingkatkan
-                    kualitas bisnis anda bersama <span class="russo-one-regular">SELLER.IN</span><br>Klik tombol dibawah
-                    ini untuk mendaftarkan diri sebagai RESELLER</p>
-                <a href="/register" class="bg-sky-800 mt-4 mx-4 py-3 px-6 rounded-md inline-block">
-                    <p class="w-auto h-auto text-white">DAFTAR</p>
-                </a>
-            </div>
-            <div class="rounded-xl xl:col-span-2 ">
-                <img src="{{ asset('landing-page/img/Hp.png') }}" alt="TahuPentol"
-                    class=" w-auto p-8 m-auto h-96 rounded-3xl md:h-96 lg:h-[500px] xl:h-[650px] 2xl:h-[800px] sm:h-full ">
-            </div>
-        </div>
-
-
-
-
-
-        <div id="tentangkami" class="mt-16 md:grid grid md:grid-cols-1 2xl:grid-cols-7">
-            <div class="rounded-xl 2xl:col-span-5 m-auto">
-                <img src="{{ asset('landing-page/img/piscok.jpg') }}" alt="TahuPentol"
-                    class=" w-full m-auto rounded-3xl object-cover p-4 2xl:h-[800px] h-full">
-            </div>
-            <div class="flex justify-start p-4 mx-auto items-start 2xl:col-span-2 md:flex-col md:items-end">
-                <p class="boogaloo-regular text-center text-6xl text-sky-800">
-                    Tentang Kami Seller.in <br>
-                    <span class="text-xl p-0 font-serif font-normal text-end justify-end items-end leading-normal">
-                        "Seller" adalah istilah yang digunakan untuk merujuk kepada seseorang atau entitas yang menjual
-                        barang atau jasa kepada konsumen atau pelanggan. Istilah ini umumnya digunakan dalam konteks
-                        perdagangan, baik secara offline maupun online. SELLER.IN sebuah perusahaan yang menciptakan
-                        peluang pekerjaan bagi IRT Dan Pelajar. Mengkombinasikan IRT (Ibu Rumah Tangga) membuat produk
-                        seperti:
-                    </span>
+                <p class="text-base text-end sm:text-lg 2xl:pl-20  xl:text-xl 2xl:text-xl font-sans  2xl:pb-4">
+                    Tingkatkan kualitas bisnis Anda Dengan
+                    platform kami, Anda akan mendapatkan alat dan dukungan yang Anda butuhkan untuk sukses di dunia
+                    perdagangan digital.
                 </p>
             </div>
-
+            <div id="tentangkami">
+            </div>
         </div>
-        <div id="produk" class="h-auto w-full bg-slate-200">
-            <p class="boogaloo-regular text-sky-800 text-6xl my-6 text-center">PRODUCT</p>
-            <div class="px-12 py6 w-full h-auto m-auto justify-center items-center">
+
+
+        <div class="md:grid md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2 mb-24">
+            <div class=" mx-auto items-start md:flex-col md:items-end">
+                <div class="p-4 m-auto flex items-center justify-center">
+                    <div class="m-auto flex items-center justify-center h-1 w-12  bg-sky-800 mx-2 "></div>
+                    <p class="tracking-wider text-lg  text-black">Tentang Kami</p>
+                    <div class="m-auto flex items-center justify-center h-1 w-12 bg-sky-800 mx-2 "></div>
+                </div>
+                <div class="text-center text-3xl text-gray-900 font-semibold pb-8">
+                    <h5>SELLER.IN platform bisnis untuk reseller</h5>
+                </div>
+                <div class="pl-16">
+                    <p class="text-lg text-left font-serif text-black 2xl:text-xl">
+                        "Seller" adalah istilah yang digunakan untuk merujuk kepada seseorang atau entitas yang menjual
+                        barang atau jasa kepada konsumen atau pelanggan. Istilah ini umumnya digunakan dalam konteks
+                        perdagangan, baik secara offline maupun online.
+                        <span id="more-text" class="hidden xl:inline-block">
+                            <br>
+                            SELLER.IN dirancang untuk memudahkan para pebisnis dalam mengelola dan meningkatkan kualitas
+                            bisnis mereka. Kami menawarkan berbagai alat dan fitur yang membantu Anda mengoptimalkan
+                            penjualan, manajemen produk, dan laporan keuangan dengan mudah dan efisien.
+                            <br>
+                            <br>
+                            Selain itu, SELLER.IN juga berkontribusi dalam menciptakan peluang pekerjaan bagi IRT (Ibu
+                            Rumah Tangga) dan pelajar. Kami mendukung IRT dalam memproduksi barang-barang unik dan
+                            kreatif serta memberikan pelajar kesempatan untuk mengembangkan keterampilan bisnis mereka
+                            sejak dini.
+                            <br><br>
+                            Bergabunglah dengan SELLER.IN dan tingkatkan kualitas bisnis Anda dengan dukungan dan alat
+                            yang tepat untuk sukses di dunia perdagangan digital.
+
+                        </span>
+                    </p>
+                    <button id="read-more" class="mt-4 text-blue-500 hover:underline" onclick="toggleReadMore()">Baca
+                        Selengkapnya</button>
+                </div>
+
+
+            </div>
+            <div class="p-4 flex justify-center items-center">
+                <img src="{{ asset('landing-page/img/hppp.png') }}" alt="" class="2xl:h-[700px] 2xl:w-auto">
+            </div>
+            <div id="produk">
+            </div>
+        </div>
+
+
+        <div  class="h-auto w-full">
+            <div class="p-4 m-auto flex items-center justify-center">
+                <div class="m-auto flex items-center justify-center h-1 w-12  bg-sky-800 mx-2 "></div>
+                <p class="tracking-wider text-lg  text-black">Produk</p>
+                <div class="m-auto flex items-center justify-center h-1 w-12 bg-sky-800 mx-2 "></div>
+            </div>
+            <div class="text-center text-3xl text-gray-900 font-semibold pb-8">
+                <h5>Kami Menyediakan Berbagai Jenis Produk:</h5>
+            </div>
+
+            <div class="p-12 py6 w-full h-auto m-auto justify-center items-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <div class="card bg-gray-100 shadow-2xl overflow-hidden">
+                    <div class="card bg-white shadow-2xl hover:shadow-black transform hover:scale-105 transition duration-300 ease-in-out overflow-hidden">
                         <div class="flex justify-center items-center p-4 text-center">
                             <h2 class="text-sky-800 luckiest-guy-regular text-3xl">RISOL</h2>
                         </div>
@@ -74,65 +114,75 @@
                                 class="h-full w-full object-cover" />
                         </div>
                     </div>
-                    <div class="card bg-gray-100 shadow-2xl overflow-hidden">
+
+                    <div class="card bg-gray-100 shadow-2xl hover:shadow-black transform hover:scale-105 transition duration-300 ease-in-out overflow-hidden">
                         <div class="flex justify-center items-center p-4 text-center">
                             <h2 class="text-sky-800 luckiest-guy-regular text-3xl">TAHU PENTOL</h2>
                         </div>
                         <div class="h-72 px-4 pb-2">
-                            <img src="{{ asset('landing-page/img/tahupentol-menu.webp') }}" alt="RISOL"
+                            <img src="{{ asset('landing-page/img/tahupentol-menu.webp') }}" alt="TAHU PENTOL"
                                 class="h-full w-full object-cover" />
                         </div>
                     </div>
-                    <div class="card bg-gray-100 shadow-2xl overflow-hidden">
+
+                    <div class="card bg-gray-100 shadow-2xl hover:shadow-black transform hover:scale-105 transition duration-300 ease-in-out overflow-hidden">
                         <div class="flex justify-center items-center p-4 text-center">
                             <h2 class="text-sky-800 luckiest-guy-regular text-3xl">KRIPIK</h2>
                         </div>
                         <div class="h-72 px-4 pb-2">
-                            <img src="{{ asset('landing-page/img/kripik-menu.jpg') }}" alt="RISOL"
+                            <img src="{{ asset('landing-page/img/kripik-menu.jpg') }}" alt="KRIPIK"
                                 class="h-full w-full object-cover" />
                         </div>
                     </div>
-                    <div class="card bg-gray-100 shadow-2xl overflow-hidden">
+
+                    <div class="card bg-gray-100 shadow-2xl hover:shadow-black transform hover:scale-105 transition duration-300 ease-in-out overflow-hidden">
                         <div class="flex justify-center items-center p-4 text-center">
                             <h2 class="text-sky-800 luckiest-guy-regular text-3xl">PISANG COKLAT</h2>
                         </div>
                         <div class="h-72 px-4 pb-2">
-                            <img src="{{ asset('landing-page/img/piscok-menu.webp') }}" alt="RISOL"
+                            <img src="{{ asset('landing-page/img/piscok-menu.webp') }}" alt="PISANG COKLAT"
                                 class="h-full w-full object-cover" />
                         </div>
                     </div>
-                    <div class="card bg-gray-100 shadow-2xl overflow-hidden">
+
+                    <div class="card bg-gray-100 shadow-2xl hover:shadow-black transform hover:scale-105 transition duration-300 ease-in-out overflow-hidden">
                         <div class="flex justify-center items-center p-4 text-center">
                             <h2 class="text-sky-800 luckiest-guy-regular text-3xl">BASRENG</h2>
                         </div>
                         <div class="h-72 px-4 pb-2">
-                            <img src="{{ asset('landing-page/img/basreng-menu.jpg') }}" alt="RISOL"
+                            <img src="{{ asset('landing-page/img/basreng-menu.jpg') }}" alt="BASRENG"
                                 class="h-full w-full object-cover" />
                         </div>
                     </div>
+
                     <!-- Tambahkan konten card lainnya di sini -->
                 </div>
+            </div>
+            <div id="kontak">
+
             </div>
         </div>
 
 
-        <div id="kontak"
-            class="my-36 max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-full mx-auto xl:px-12 ">
+        <div
+            class="my-36 max-w-md sm:max-w-2xl md:max-w-2xl lg:max-w-4xl xl:max-w-full mx-auto xl:px-12 ">
             <div class="shadow-lg border rounded-xl py-7">
                 <div class="xl:flex xl:items-center">
                     <form action="" class="px-5 xl:px-14  xl:w-1/2">
                         <div class="flex items-center justify-center mt-7 mb-3">
-                            <div class="h-1 w-12 bg-orange-500 mr-4"></div>
+                            <div class="h-1 w-12 bg-sky-800 mr-4"></div>
                             <p class="tracking-wider text-lg  text-black">Kontak</p>
-                            <div class="h-1 w-12 bg-orange-500 ml-4"></div>
+                            <div class="h-1 w-12 bg-sky-800 ml-4"></div>
                         </div>
                         <h1 class="text-center text-4xl font-semibold text-black">Hubungi Kami</h1>
                         <div class="flex flex-col my-5 xl:my-7"><label for="nama"
-                                class="mb-2 font-semibold text-black">Nama</label><input type="text" id="nama"
+                                class="mb-2 font-semibold text-black">Nama</label><input type="text"
+                                id="nama"
                                 class="rounded-md border-2 bg-white px-2 h-8 xl:h-10 focus:border-orange-500 focus:ring-0"
                                 value=""></div>
                         <div class="flex flex-col my-5 xl:my-7"><label for="email"
-                                class="mb-2 font-semibold text-black">Email</label><input type="email" id="email"
+                                class="mb-2 font-semibold text-black">Email</label><input type="email"
+                                id="email"
                                 class="rounded-md border-2 bg-white px-2 h-8 xl:h-10 focus:border-orange-500 focus:ring-0"
                                 value=""></div>
                         <div class="flex flex-col my-5 xl:my-7"><label for="pesan"
@@ -152,38 +202,7 @@
 
                     </div>
                 </div>
-                <div class=" m-auto  lg:flex justify-center items-center p-8 pb-4 lg:space-x-6  font-semibold">
-                    <div class="flex items-center justify-center my-4 "><svg class="text-orange-500 mr-2"
-                            stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
-                            class="text-[#A4074D] mr-2" height="24" width="24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M515.664-.368C305.76-.368 128 178.4 128 390.176c0 221.76 206.032 448.544 344.624 607.936.528.64 22.929 25.52 50.528 25.52h2.449c27.6 0 49.84-24.88 50.399-25.52 130.064-149.52 320-396.048 320-607.936C896 178.4 757.344-.368 515.664-.368zm12.832 955.552c-1.12 1.12-2.753 2.369-4.193 3.409-1.472-1.008-3.072-2.288-4.255-3.408l-16.737-19.248C371.92 785.2 192 578.785 192 390.176c0-177.008 148.224-326.56 323.664-326.56 218.528 0 316.336 164 316.336 326.56 0 143.184-102.128 333.296-303.504 565.008zm-15.377-761.776c-106.032 0-192 85.968-192 192s85.968 192 192 192 192-85.968 192-192-85.968-192-192-192zm0 320c-70.576 0-129.473-58.816-129.473-129.408 0-70.576 57.424-128 128-128 70.624 0 128 57.424 128 128 .032 70.592-55.903 129.408-126.527 129.408z">
-                            </path>
-                        </svg>
-                        <p>545 Mavis Island, IL 99191</p>
-                    </div>
-                    <div class="flex items-center justify-center my-4"><svg class="text-orange-500 mr-2"
-                            stroke ="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                            stroke-linecap="round" stroke-linejoin="round" class="text-[#A4074D] mr-2"
-                            height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                            </path>
-                        </svg>
-                        <p>+2034 4040 3030</p>
-                    </div>
-                    <div class="flex items-center justify-center my-4"><svg class="text-orange-500 mr-2"
-                            stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
-                            class="text-[#A4074D] mr-2" height="24" width="24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
-                            </path>
-                        </svg>
-                        <p>hello@gmail.com</p>
-                    </div>
-                </div>
+
 
             </div>
 
@@ -213,12 +232,53 @@
                         <div>
                             <h2 class="mb-6 text-lg font-semibold">Layanan</h2>
                             <ul class="text-gray-400  font-medium">
-                                <li class="mb-3"><a class="hover:text-gray-300" href="/">Tes Kraeplin</a>
-                                </li>
-                                <li class="mb-3"><a class="hover:text-gray-300" href="/">Tes DISC</a></li>
+                                <div class="flex items-center  my-4 ">
+                                    <p>545 Mavis Island, IL 99191</p>
+                                </div>
+                                <div class="flex items-center  my-4">
+                                    <p>+2034 4040 3030</p>
+                                </div>
+                                <div class="flex items-center  my-4">
+                                    <p>hello@gmail.com</p>
+                                </div>
                             </ul>
                         </div>
                         <div>
+                            <h2 class="mb-6 text-lg font-semibold">Hubungi Kami</h2>
+                            <ul class="text-gray-400  font-medium">
+                                <div class="flex items-center  my-4 "><svg class="text-orange-500 mr-2"
+                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 1024 1024" class="text-[#A4074D] mr-2" height="24"
+                                        width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M515.664-.368C305.76-.368 128 178.4 128 390.176c0 221.76 206.032 448.544 344.624 607.936.528.64 22.929 25.52 50.528 25.52h2.449c27.6 0 49.84-24.88 50.399-25.52 130.064-149.52 320-396.048 320-607.936C896 178.4 757.344-.368 515.664-.368zm12.832 955.552c-1.12 1.12-2.753 2.369-4.193 3.409-1.472-1.008-3.072-2.288-4.255-3.408l-16.737-19.248C371.92 785.2 192 578.785 192 390.176c0-177.008 148.224-326.56 323.664-326.56 218.528 0 316.336 164 316.336 326.56 0 143.184-102.128 333.296-303.504 565.008zm-15.377-761.776c-106.032 0-192 85.968-192 192s85.968 192 192 192 192-85.968 192-192-85.968-192-192-192zm0 320c-70.576 0-129.473-58.816-129.473-129.408 0-70.576 57.424-128 128-128 70.624 0 128 57.424 128 128 .032 70.592-55.903 129.408-126.527 129.408z">
+                                        </path>
+                                    </svg>
+                                    <p>545 Mavis Island, IL 99191</p>
+                                </div>
+                                <div class="flex items-center  my-4"><svg class="text-orange-500 mr-2"
+                                        stroke ="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke-linecap="round" stroke-linejoin="round" class="text-[#A4074D] mr-2"
+                                        height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                    <p>+2034 4040 3030</p>
+                                </div>
+                                <div class="flex items-center  my-4"><svg class="text-orange-500 mr-2"
+                                        stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 1024 1024" class="text-[#A4074D] mr-2" height="24"
+                                        width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+                                        </path>
+                                    </svg>
+                                    <p>hello@gmail.com</p>
+                                </div>
+                            </ul>
+                        </div>
+                        {{-- <div>
                             <h2 class="mb-6 text-lg font-semibold">Sosial Media</h2>
                             <div class="flex gap-4 text-gray-400"><a class="hover:text-gray-300" href="/"><svg
                                         stroke="currentColor" fill="currentColor" stroke-width="0"
@@ -256,7 +316,7 @@
                                             d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
                                         </path>
                                     </svg></a></div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8">
@@ -264,8 +324,36 @@
                             href="/">SELLER.IN</a>. All Rights Reserved.</span></div>
             </div>
         </footer>
-    </div>
 
 </body>
+<script>
+    function toggleReadMore() {
+        var moreText = document.getElementById("more-text");
+        var readMoreButton = document.getElementById("read-more");
+
+        if (moreText.classList.contains("hidden")) {
+            moreText.classList.remove("hidden");
+            readMoreButton.innerText = "Baca Lebih Sedikit";
+        } else {
+            moreText.classList.add("hidden");
+            readMoreButton.innerText = "Baca Selengkapnya";
+        }
+    }
+
+    function adjustReadMoreLink() {
+        var moreText = document.getElementById("more-text");
+        var readMoreButton = document.getElementById("read-more");
+
+        if (window.innerWidth >= 1280) { // xl breakpoint
+            readMoreButton.classList.add("hidden");
+        } else {
+            readMoreButton.classList.remove("hidden");
+        }
+    }
+
+    window.addEventListener('resize', adjustReadMoreLink);
+    document.addEventListener('DOMContentLoaded', adjustReadMoreLink);
+</script>
+
 
 </html>
