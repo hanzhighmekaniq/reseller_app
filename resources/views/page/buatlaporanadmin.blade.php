@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Laporkan Penjualan Koordinator</h1>
+    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Laporkan Penjualan Koordinator</h2>
 
     @if(session('error'))
         <div class="alert alert-danger">

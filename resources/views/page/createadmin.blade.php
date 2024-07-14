@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <a href="{{ url('/admins') }}" class="text-decoration-none">
-            <h5  class="fs-6 p-2 fw-semibold"><-Daftar Koordinator</h1>
+            <h5  class="fs-6 p-2 fw-semibold"><- Daftar Koordinator</h1>
         </a>
 
 

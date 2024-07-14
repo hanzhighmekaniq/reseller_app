@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Daftar Reseller</h1>
+    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Daftar Reseller</h2>
 
-    {{-- <div class="row mb-4">
+    <div class="row mb-4">
         <div class="col-md-12">
             <a href="{{ route('anggota.create') }}" class="btn btn-primary">Tambah Anggota</a>
         </div>
-    </div> --}}
+    </div>
 
     <div class="row">
         <div class="col-md-12">

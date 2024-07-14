@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Beranda Reseller</h1>
+    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Beranda Reseller</h2>
 
     <div class="row">
         <!-- Total Sales Card -->

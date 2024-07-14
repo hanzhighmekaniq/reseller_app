@@ -39,7 +39,7 @@
                                     <td>{{ $admin->email }}</td>
                                     <td>{{ $admin->no_wa }}</td>
                                     <td>
-                                        <a href="{{ route('admins.edit', $admin->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('admins.edit', $admin->id) }}" class="btn btn-success btn-sm">Edit</a>
                                         <form action="{{ route('admins.destroy', $admin->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')

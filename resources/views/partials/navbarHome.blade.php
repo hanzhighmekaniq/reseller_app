@@ -17,9 +17,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
 {{-- TAILWIND --}}
 
-
+<script>
+    // JavaScript to handle scroll event
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 0) {
+            navbar.classList.add('shadow-md');
+            navbar.classList.add('bg-white');
+        } else {
+            navbar.classList.remove('shadow-md');
+        }
+    });
+</script>
 <div class="top-0  mx-auto sticky bg-white bg-opacity-0  w-full m-auto z-50 ">
-    <div class=" w-full h-full  ">
+    <nav id="navbar" class=" w-full h-full  ">
         <div class="flex items-center justify-between md:hidden">
             <div class="justify-start">
                 <div class="drawer">
@@ -113,9 +124,14 @@
                 </ul>
             </div>
             <div class="flex space-x-4 items-center">
-                <a href="/login"
-                    class="border-2 border-orange-500 bg-orange-500 text-white px-6 py-2 rounded-md text-base font-semibold transition duration-300 ease-in-out">
+                {{-- <button
+                    class="border-2 border-orange-500 bg-orange-500 text-white px-6 py-2 rounded-md text-base font-semibold transition duration-300 ease-in-out"
+                    onclick="my_modal_3.showModal()">
                     Masuk
+                </button> --}}
+                <a href="/login"
+                    class="border-2 border-orange-500 text-orange-500 px-6 py-2 rounded-md text-base font-semibold transition duration-300 ease-in-out">
+                    Login
                 </a>
                 <a href="/register"
                     class="border-2 border-orange-500 text-orange-500 px-6 py-2 rounded-md text-base font-semibold transition duration-300 ease-in-out">
@@ -124,5 +140,72 @@
             </div>
 
         </div>
-    </div>
+    </nav>
 </div>
+
+
+
+<dialog id="my_modal_3" class="modal ">
+    <div class="bg-white modal-box p-0">
+
+
+        <form method="dialog" class="flex justify-end px-2 pt-2">
+            <button class="btn btn-sm btn-circle btn-ghost  top-0 right-0 mt-1 mr-1">✕</button>
+        </form>
+
+
+        <form class="px-6 pb-6" method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <div class="form-group mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">{{ __('Email') }}</label>
+                <input id="email" type="email"
+                    class="mt-1 block w-full px-3 py-2 border bg-white rounded-md text-black shadow-sm focus:outline-none focus:ring-sky-800 focus:border-sky-800 text-sm sm:text-sm
+                    @error('email') border-red-500 @enderror"
+                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                @error('email')
+                    <span class="invalid-feedback text-sm text-red-600 mt-1" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">{{ __('Password') }}</label>
+                <input id="password" type="password"
+                    class="mt-1 block w-full px-3 py-2 border bg-white rounded-md  shadow-sm focus:outline-none focus:ring-sky-800 focus:border-sky-800 sm:text-sm @error('password') border-red-500 @enderror"
+                    name="password" required autocomplete="current-password">
+
+                @error('password')
+                    <span class="invalid-feedback text-sm text-red-600 mt-1" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group mb-4">
+                <div class="flex items-center">
+                    <input type="checkbox"
+                        class="h-4 w-4 border-gray-300 rounded focus:ring-sky-800 text-indigo-600 shadow-sm focus:border-skyring-sky-800 {{ old('remember') ? 'bg-indigo-600 border-transparent' : 'bg-white' }}"
+                        name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <label class="ml-2 block text-sm text-gray-900" for="remember">{{ __('Ingat saya') }}</label>
+                </div>
+
+            </div>
+
+            <button type="submit"
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-800">
+                {{ __('Login') }}
+            </button>
+
+            @if (Route::has('password.request'))
+                <hr class="my-4">
+                <div class="text-center">
+                    <a class="text-sm text-indigo-600 hover:text-skyring-sky-800"
+                        href="{{ route('password.request') }}">{{ __('Lupa Pasword?') }}</a>
+                </div>
+            @endif
+        </form>
+    </div>
+</dialog>

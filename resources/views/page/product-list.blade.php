@@ -44,7 +44,7 @@
                                     <td><img  src="{{ asset('storage/' . $product->image) }}" width="80"></td>
                                     <td>
                                         <a href="{{ route('products.edit', $product->id) }}"
-                                            class="btn btn-warning btn-sm">Edit</a>
+                                            class="btn btn-success btn-sm">Edit</a>
                                         <form action="{{ route('products.destroy', $product->id) }}" method="POST"
                                             class="d-inline">
                                             @csrf

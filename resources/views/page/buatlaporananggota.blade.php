@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Laporkan Penjualan Reseller</h1>
+    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Laporkan Penjualan Reseller</h2>
 
     @if(session('error'))
         <div class="alert alert-danger">
@@ -42,8 +42,8 @@
                                 <hr>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-secondary" id="addProduct">Tambah Produk</button>
-                        <button type="submit" class="btn btn-primary">Laporkan</button>
+                        <button type="button" class="btn btn-primary" id="addProduct">Tambah Produk</button>
+                        <button type="submit" class="btn btn-success">Laporkan</button>
                     </form>
                 </div>
             </div>

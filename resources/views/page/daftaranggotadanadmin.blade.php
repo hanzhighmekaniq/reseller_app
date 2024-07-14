@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Daftar Reseller</h1>
+    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Daftar Reseller</h2>
 
 
     <div class="row">
@@ -17,7 +17,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Admin</th> 
+                                    <th>Admin</th>
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>No WA</th>
@@ -27,7 +27,7 @@
                                 @foreach ($anggota as $anggota)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $anggota->bos->name ?? 'N/A' }}</td> 
+                                    <td>{{ $anggota->bos->name ?? 'N/A' }}</td>
                                     <td>{{ $anggota->name }}</td>
                                     <td>{{ $anggota->email }}</td>
                                     <td>{{ $anggota->no_wa }}</td>

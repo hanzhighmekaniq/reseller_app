@@ -1,20 +1,23 @@
-<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<link rel="stylesheet" href="/css/style.css">
+
+<ul class="navbar-nav bg-light.bg-gradient sidebar sidebar-secondary accordion shadow-lg border-end" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon ">
-            <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo" class="img-fluid" style="max-height: 2rem;">
+            <img src="{{ asset('sb-admin-2/img/SELLER_new.png') }}" alt="Seller Logo" class="img-fluid"
+                style="max-height: 3rem;">
         </div>
-        <div class="sidebar-brand-text mx-3">Seller.in</div>
+        <div class="sidebar-brand-text mx-2 text-primary">Seller.in</div>
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider border-primary my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link"
-           @if (Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
+            @if (Auth::user()->role == 'pemilik') href="{{ url('/dashboard/pemilik') }}"
            @elseif(Auth::user()->role == 'bos') href="{{ url('/dashboard/Koordinator') }}"
            @elseif(Auth::user()->role == 'anggota') href="{{ url('/dashboard/anggota') }}" @endif>
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -23,16 +26,18 @@
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider border-primary">
+
 
     {{-- SIDEBAR PEMILIK --}}
     @if (Auth::user()->role == 'pemilik')
-        <div class="sidebar-heading">Pengelolaan</div>
+        <div class="sidebar-heading text-primary">Pengelolaan</div>
 
         <!-- Nav Item - Koordinator Management -->
         <li class="nav-item">
             <a class="nav-link" href="{{ url('/admins') }}">
                 <i class="fas fa-fw fa-user-cog"></i>
+
                 <span>Daftar Koordinator</span>
             </a>
         </li>
@@ -54,7 +59,8 @@
 
         <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenu" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
                 <i class="fas fa-fw fa-chart-bar"></i>
                 <span>Penjualan</span>
             </a>
@@ -68,12 +74,12 @@
             </ul>
         </li>
 
-        <hr class="sidebar-divider">
+        <hr class="sidebar-divider border-primary">
     @endif
 
     {{-- SIDEBAR Koordinator --}}
     @if (Auth::user()->role == 'bos')
-        <div class="sidebar-heading">Koordinator Tools</div>
+        <div class="sidebar-heading text-primary">Koordinator Tools</div>
 
         <!-- Nav Item - User Management -->
         <li class="nav-item">
@@ -85,7 +91,8 @@
 
         <!-- Nav Item - Kelola Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenuKoordinator" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenuKoordinator" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
                 <i class="fas fa-fw fa-shopping-cart"></i>
                 <span>Kelola Penjualan</span>
             </a>
@@ -101,7 +108,8 @@
 
         <!-- Nav Item - Report Management -->
         <li class="nav-item">
-            <a class="nav-link" href="#reportSubmenuKoordinator" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#reportSubmenuKoordinator" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
                 <i class="fas fa-fw fa-file-alt"></i>
                 <span>Manajemen Laporan</span>
             </a>
@@ -118,16 +126,17 @@
             </ul>
         </li>
 
-        <hr class="sidebar-divider">
+        <hr class="sidebar-divider border-primary">
     @endif
 
     {{-- SIDEBAR ANGGOTA --}}
     @if (Auth::user()->role == 'anggota')
-        <div class="sidebar-heading">User Area</div>
+        <div class="sidebar-heading text-primary">User Area</div>
 
         <!-- Nav Item - Orders -->
         <li class="nav-item">
-            <a class="nav-link" href="#orderSubmenuAnggota" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a class="nav-link" href="#orderSubmenuAnggota" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle">
                 <i class="fas fa-fw fa-shopping-cart"></i>
                 <span>Kelola Penjualan</span>
             </a>
@@ -140,7 +149,7 @@
                 </li>
             </ul>
         </li>
-        <hr class="sidebar-divider">
+        <hr class="sidebar-divider border-primary">
     @endif
 
     {{-- SIDEBAR SEMUA --}}
@@ -153,7 +162,8 @@
 
     <!-- Nav Item - Report -->
     <li class="nav-item">
-        <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <a class="nav-link" href="#reportSubmenu" data-toggle="collapse" aria-expanded="false"
+            class="dropdown-toggle">
             <i class="fas fa-fw fa-chart-bar"></i>
             <span>Laporan</span>
         </a>
@@ -179,7 +189,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('logout') }}"
-           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
         </a>
@@ -189,10 +199,10 @@
         </form>
     </li>
 
-    <hr class="sidebar-divider d-none d-md-block">
+    <hr class="sidebar-divider border-primary">
 
     <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button class="rounded-circle btn-primary border-primary border-0" id="sidebarToggle"></button>
     </div>
 
 </ul>

@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Tambah Reseller</h1>
+    <h2 class="p-2 text-primary fw-bold border-bottom border-primary mb-4">Tambah Reseller</h2>
+
 
     <div class="row">
         <div class="col-md-12">

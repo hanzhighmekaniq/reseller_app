@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <h1>Products</h1>
         <input type="text" id="search" class="form-control" placeholder="Search by name" value="{{ request()->query('search') }}">
         <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>

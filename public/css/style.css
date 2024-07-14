@@ -1,0 +1,63 @@
+/* Custom CSS */
+.bg-orange-500 {
+  background-color: #F97316;
+}
+
+.text-orange-500 {
+  color: #F97316;
+}
+
+/* Contoh penggunaan */
+.element-with-bg {
+  /* Menggunakan latar belakang oranye */
+  background-color: #F97316;
+}
+
+.element-with-text {
+  /* Menggunakan warna teks oranye */
+  color: #F97316;
+}
+
+/* Custom CSS */
+.bg-orange-600 {
+    background-color: #e4711a;
+  }
+
+  .text-orange-600 {
+    color: #e4711a;
+  }
+
+  /* Contoh penggunaan */
+  .element-with-bg {
+    /* Menggunakan latar belakang oranye-600 */
+    background-color: #e4711a;
+  }
+
+  .element-with-text {
+    /* Menggunakan warna teks oranye-600 */
+    color: #e4711a;
+  }
+
+  /* Custom CSS */
+.bg-orange-700 {
+    background-color: #c05621; /* Warna oranye-700 */
+  }
+
+  .text-orange-700 {
+    color: #c05621; /* Warna oranye-700 */
+  }
+
+  /* Contoh penggunaan */
+  .element-with-bg {
+    /* Menggunakan latar belakang oranye-700 */
+    background-color: #c05621; /* Warna oranye-700 */
+  }
+
+  .element-with-text {
+    /* Menggunakan warna teks oranye-700 */
+    color: #c05621; /* Warna oranye-700 */
+  }
+
+  .warnatext {
+    color: #235688;
+  }
